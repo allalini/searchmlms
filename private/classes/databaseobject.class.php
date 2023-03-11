@@ -121,7 +121,7 @@ class DatabaseObject {
     public function attributes() {
         $attributes = [];
         foreach (static::$db_columns as $column) {
-            if ($column == 'id') {
+            if ($column == static::$table_name . "_id") {
                 continue;
             }
             $attributes[$column] = $this->$column;
