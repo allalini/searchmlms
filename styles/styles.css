@@ -1,48 +1,471 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');*,
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+:root {
+    --sm-padding: 0.5rem;
+    --lg-padding: 1rem;
+}
+
+*,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Bebas Neue', cursive, Verdana, Tahoma, sans-serif;
 }
 
 body {
-  background: rgb(63, 153, 153);
-  font-family: 'Bebas Neue', cursive, Verdana, Tahoma, sans-serif;
-  display: flex;
-  justify-content: center;
-  min-height: 100vh;
-  overflow: hidden;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    min-height: 100vh;
+}
+
+#skip-link {
+    background-color: #000;
+    border: #fff solid 4px;
+    color: #fff;
+    padding: var(--sm-padding);
+    position: absolute;
+    top: -9999px;
+}
+
+#skip-link:focus {
+    right: 90rem;
+    top: var(--lg-padding);
+}
+
+/***** Nav *****/
+
+#logo {
+    display: none;
+    pointer-events: none;
+}
+
+#logo-link {
+    display: none;
+    pointer-events: none;
+    user-focus: none;
+}
+
+header img {
+    pointer-events: none;
+    user-select: none;
 }
 
 nav {
-  text-align: center;
+    background-color: #2b3d28;
+    display: flex;
+    height: 8rem;
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    flex-basis: 100%;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 
 nav li {
-  display: inline;
+    display: block;
+    flex-basis: 15rem;
+    flex-shrink: 0;
+    line-height: 8rem;
+    transition: all .3s ease-in-out;
 }
 
 nav a {
-  color: #fff;
-  font-size: 1.5em;
-  margin-right: 3.5rem;
-  padding-left: 2rem;
-  text-align: center;
-  text-decoration: none;
+    color: #fff;
+    font-size: 2em;
+    padding: 0 2rem;
+    text-decoration: none;
+    user-select: none;
+    transition: all .3s ease-in-out;
+    white-space: nowrap;
 }
 
 nav a:hover {
-  text-decoration: underline;
+    color: #78bfae;
+    text-decoration: none;
 }
 
-nav li:nth-child(3) {
-  background-color: #27ac6a;
-  border: #27ac6a solid;
-  border-radius: 10px;
-  font-size: 1.5rem;
-  padding: 1rem;
-  text-decoration: none;
+nav li:nth-child(1) {
+    margin-left: auto;
 }
 
 nav li:nth-child(6) {
-  margin-left: 1rem;
+    flex-basis: auto;
+    margin: 0 0 0 auto;
 }
+
+#nav-box:checked + label {
+    text-decoration: underline;
+}
+
+#nav-box,
+#nav-trigger {
+    display: none;
+}
+
+#nav-box:checked ~ #nav-collapse {
+    display: flex;
+}
+
+#nav-trigger {
+    color: #231f20;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    padding: var(--lg-padding);
+    text-align: center;
+}
+
+/***** Login Page *****/
+
+#login,
+#signup {
+    display: grid;
+    justify-items: center;
+    margin: 2rem;
+}
+
+#login h1,
+#signup h1 {
+    font-size: 3rem;
+}
+
+#login form,
+#signup form {
+    font-size: 2rem;
+}
+
+#signup-submit,
+#login-button {
+    background-color: #78bfae;
+    border: #78bfae;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    padding: .5rem
+}
+
+#signup-submit:hover,
+#login-button:hover {
+    color: #2b3d28;
+}
+
+input {
+    border: solid 3px #2b3d28;
+    border-radius: 10px;
+    margin-bottom: .5rem;
+    padding: .5rem;
+    width: 18rem;
+}
+
+/***** Sign up Page *****/
+#signup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#signup-submit {
+    margin: 1rem 0;
+}
+
+/***** Search Bar *****/
+
+.search-bar {
+    background-color: #78bfae;
+    display: flex;
+    flex-direction: row;
+    font-size: 2rem;
+    height: 20rem;
+    justify-content: center;
+    padding-top: 2rem;
+}
+
+#mlm-search {
+    border-radius: 10px;
+    border: solid #fff;
+    box-sizing: border-box;
+    font: 3rem 'Bebas Neue', cursive, Verdana, Tahoma, sans-serif;
+    margin: 8px 0;
+    padding: 5px 2px;
+    width: 20rem;
+}
+
+.mag-glasses {
+    margin-right: 5rem;
+}
+
+.lighter-glasses {
+    opacity: 50%;
+}
+
+#glass-medium {
+    margin: 100px 50px;
+}
+
+/***** Main Content *****/
+
+#main-content {
+    display: grid;
+    grid-template-columns: 45rem 25rem;
+    margin: 1rem;
+    justify-content: center;
+    column-gap: 16rem;
+}
+
+#main-content h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+#main-content p {
+    font-size: 1.5rem;
+}
+
+#boss {
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px rgb(88, 88, 88);
+    grid-column: 2;
+    margin-top: 2rem;
+}
+
+/***** Footer *****/
+
+footer {
+    align-items: flex-end;
+    background-color: #78bfae;
+    display: flex;
+    /* grid-template-columns: repeat(3, 1fr); */
+    margin-top: auto;
+    padding: 1rem;
+    justify-content: space-between;
+    /* grid-template-rows: repeat(2, 1fr); */
+    /* min-height: 13rem;
+    padding-bottom: 2rem; */
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer li {
+    color: #000;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+footer a {
+    color: #000;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/***** MLM Master List *****/
+
+#mlm-list {
+    font-size: 3rem;
+    margin-left: 3rem;
+}
+
+/***** Media Queries *****/
+
+/***** 1765 *****/
+@media screen and (max-width: 1765px) {
+    #main-h1 {
+        font-size: 3rem;
+    }
+
+    #mlm-search {
+        font-size: 2.5rem;
+    }
+}
+
+/***** 1678 *****/
+@media screen and (max-width: 1678px) {
+    #main-h1 {
+        font-size: 2rem;
+    }
+
+    .search-bar {
+        height: 17rem;
+    }
+}
+
+/***** 1648 *****/
+@media screen and (max-width: 1648px) {
+    #glass-medium,
+    #glass-lg {
+        display: none;
+    }
+
+    #mlm-search {
+        font-size: 1.5rem;
+        height: 3rem;
+    }
+}
+
+/***** 1428 *****/
+@media screen and (max-width: 1428px) {
+    #main-content {
+        display: grid;
+        grid-template-columns: 30rem 20rem;
+    }
+}
+
+/***** 1408 *****/
+@media screen and (max-width: 1408px) {
+    nav li:nth-child(6) {
+        padding-right: 3rem;
+    }
+
+    nav li {
+        flex-basis: 10rem;
+    }
+
+    nav li a {
+        padding: 0 1rem;
+    }
+
+    #main-content {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+        justify-content: center;
+        column-gap: 16rem;
+        width: 90%;
+    }
+
+    #boss {
+        display: none;
+    }
+}
+
+/***** 1312 *****/
+@media screen and (max-width: 1312px) {
+    #mlm-search {
+        font-size: 1.5rem;
+        height: 2.5rem;
+        width: 15rem;
+    }
+}
+
+/***** 1100 *****/
+@media screen and (max-width: 1100px) {
+    nav a {
+        font-size: 1.5rem;
+    }
+}
+
+/***** 1080 *****/
+
+@media screen and (max-width: 1080px) {
+    #glass-2 {
+        display: none;
+    }
+}
+
+/***** 1062 *****/
+@media screen and (max-width: 1062px) {
+    nav li:nth-of-type(3) {
+        display: none;
+    }
+
+    nav li {
+        flex-basis: 8rem;
+    }
+
+    nav a {
+        font-size: 2.25rem;
+    }
+
+    #logo {
+        display: block;
+        margin: 1rem 1rem;
+        height: 5rem;
+        width: 5rem;
+    }
+
+    #logo-link {
+        display: block;
+        pointer-events: all;
+    }
+}
+
+/***** 936 *****/
+@media screen and (max-width: 936px) {
+    #first-glass,
+    #glass-last {
+        display: none;
+    }
+}
+
+/***** 930 *****/
+@media screen and (max-width: 930px) {
+    nav a {
+        font-size: 2rem;
+    }
+}
+
+/***** 877 *****/
+@media screen and (max-width: 877px) {
+    nav a {
+        font-size: 1.5rem;
+    }
+}
+
+/***** 855 *****/
+/*put hamburger menu here*/
+@media screen and (max-width: 855px) {
+    #nav-trigger {
+        display: block;
+    }
+
+    #nav-collapse {
+        display: none;
+        flex-direction: column;
+    }
+
+    nav ul {
+        display: flex;
+        flex-basis: 100%;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav li {
+        display: block;
+        flex-basis: 15rem;
+        flex-shrink: 0;
+        line-height: 8rem;
+        transition: all .3s ease-in-out;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #logo,
+    #logo-link {
+        display: none;
+    }
+}
+

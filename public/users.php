@@ -1,4 +1,4 @@
-<?php require_once('../private/initalize.php');
+<?php require_once('../private/initialize.php');
 
 
 $users = User::find_all();

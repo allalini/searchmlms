@@ -1,3 +1,6 @@
+<?php
+/** @var $database */
+?>
 <footer>
   &copy; <?php echo date('Y'); ?> Search MLMs
 </footer>
@@ -6,5 +9,6 @@
 </html>
 
 <?php
-  db_disconnect($database);
+
+db_disconnect($database);
 ?>

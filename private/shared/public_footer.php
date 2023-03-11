@@ -1,25 +1,19 @@
-
-  <?php if(isset($super_hero_image)) { ?>
-
-    <div class="expanding-wrapper">
-      <?php $image_url = url_for('/images/' . $super_hero_image); ?>
-      <img id="super-hero-image" src="<?php echo $image_url; ?>" />
-      <footer>
-        <?php include(SHARED_PATH . '/public_copyright_disclaimer.php'); ?>
-      </footer>
-    </div>
-
-  <?php } else { ?>
-
-    <footer>
-      <p></p>
-    </footer>
-
-  <?php } ?>
-
-  </body>
-</html>
-
 <?php
+/** @var $database */
 db_disconnect($database);
 ?>
+<footer>
+  <img src="<?= url_for('images/logo-dark.120.png') ?>" alt="search mlms logo">
+  <ul>
+    <li>Links</li>
+    <li><a href="https://www.reddit.com/r/antiMLM/" target="_blank">Anti-MLM Reddit</a></li>
+    <li><a href="https://mlmtruth.org/help/" target="_blank">Get help</a></li>
+  </ul>
+
+  <p>Copyright &copy; 2023 Search MLMs</p>
+</footer>
+
+
+</body>
+
+</html>

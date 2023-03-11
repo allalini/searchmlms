@@ -1,4 +1,5 @@
-<?php require_once('../private/initalize.php');
+<?php
+require_once('../private/initialize.php');
 include(SHARED_PATH . '/public_header.php'); 
 
 
@@ -14,4 +15,6 @@ foreach($posts as $post) { ?>
         <?php echo h($post->post_date); ?><br>
       
       <?php } ?>
+
+<?php include(SHARED_PATH . '/public_footer.php'); ?>
 

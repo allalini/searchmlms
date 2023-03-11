@@ -1,5 +1,3 @@
-<?php require_once('private/initalize.php'); 
+<?php
 
-include(SHARED_PATH . '/public_header.php'); 
-?>
-
+header("Location: public/index.php");

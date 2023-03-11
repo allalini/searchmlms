@@ -1,3 +1,5 @@
 db_credentials.php
 db_credentials.prod.php
 .vscode
+.idea
+*.sql
