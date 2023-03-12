@@ -29,11 +29,11 @@ if (is_post_request()) {
         <?php echo display_errors($errors); ?>
         <form action="signup.php" method="post" id="signup-form">
             <label for="user-first-name">First name:</label>
-            <input type="text" name="user_first_name" id="user-first-name" autocomplete="given_name" value="<?=$_POST['user_first_name']?>">
+            <input type="text" name="user_first_name" id="user-first-name" autocomplete="given_name" value="<?=$_POST['user_first_name'] ?? ''?>">
             <label for="user-last-name">Last name:</label>
-            <input type="text" name="user_last_name" id="user-last-name" autocomplete="family_name" value="<?=$_POST['user_last_name']?>">
+            <input type="text" name="user_last_name" id="user-last-name" autocomplete="family_name" value="<?=$_POST['user_last_name'] ?? ''?>">
             <label for="user-email">Email:</label>
-            <input type="text" id="user-email" name="user_email" value="<?=$_POST['user_email']?>"/>
+            <input type="text" id="user-email" name="user_email" value="<?=$_POST['user_email'] ?? ''?>"/>
             <label for="password">Password:</label>
             <input type="password" name="user_password" id="password"/>
             <label for="confirm-password">Confirm password:</label>

@@ -17,7 +17,7 @@ include(SHARED_PATH . '/public_header.php');
                  class="mag-glasses" id="glass-lg" draggable="false">
             <div>
                 <form action="index.php" method="POST">
-                    <h1 id="main-h1">Is&nbsp;<input aria-label="organization name" autofocus type="search" name="mlm_search" height="30px" id="mlm-search">&nbsp;an&nbsp;MLM?</h1>
+                    <h1 id="main-h1">Is&nbsp;<input aria-label="organization name" type="search" name="mlm_search" height="30px" id="mlm-search">&nbsp;an&nbsp;MLM?</h1>
                 </form>
                 <?php
                 if (is_post_request()) {

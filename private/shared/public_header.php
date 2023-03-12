@@ -13,11 +13,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
-<a href="#main-search" id="skip-link">Skip to main content</a>
+<a href="#mlm-search" id="skip-link">Skip to search</a>
 <header>
     <input id="nav-box" type="checkbox">
     <label for="nav-box" id="nav-trigger">Menu</label>
@@ -27,13 +30,14 @@
             <a href="<?= url_for('/public/index.php') ?>" id="logo-link"><img
                         src="<?= url_for('images/logo.120.png') ?>" id="logo" alt="search mlms logo"></a>
             <ul>
+                <li class="mobile-home"><a href="<?= url_for('/public/index.php') ?>">Home</a></li>
                 <li><a href="<?= url_for('/public/mlms.php') ?>">MLM Master List</a></li>
                 <li><a href="<?= url_for('/public/posts.php') ?>">Forums</a></li>
-                <li><a href="<?= url_for('/public/index.php') ?>"><img src="<?= url_for('images/logo-light.120.png') ?>"
-                                                                       alt="search mlms logo"></a></li>
+                <li><a href="<?= url_for('/public/index.php') ?>">
+                        <img src="<?= url_for('images/logo-light.120.png') ?>" alt="search mlms logo" /></a>
+                </li>
                 <li><a href="https://consumer.ftc.gov/articles/multi-level-marketing-businesses-pyramid-schemes"
                        target="_blank">FTC Article</a></li>
-                <li><a href="https://www.youtube.com/results?search_query=mlms" target="_blank">YouTube</a></li>
                 <li>
                     <?php
                     /** @var Session $session */
