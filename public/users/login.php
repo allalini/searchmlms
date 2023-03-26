@@ -41,7 +41,11 @@ if (is_post_request()) {
 <div id="login">
     <div id="login-style">
         <?php $page_title = 'Log in'; ?>
-        <h1>Login</h1>
+        <?php if (isset($_GET['redirected']) && $_GET['redirected'] == '1') { ?>
+            <div role="alert">You must be signed in to access forum content.</div>
+        <?php } ?>
+
+        <h1>Log in</h1>
 
         <?php echo display_errors($errors); ?>
 
