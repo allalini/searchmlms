@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300&display=swap');
+
 :root {
     --sm-padding: 0.5rem;
     --lg-padding: 1rem;
@@ -10,7 +12,7 @@
 }
 
 html {
-    font-family: 'Bebas Neue', Verdana, Tahoma, sans-serif;
+    font-family: 'Roboto', Verdana, Tahoma, sans-serif;
 }
 
 body {
@@ -60,11 +62,14 @@ header img {
 nav {
     background-color: #2b3d28;
     display: flex;
+    font-family: 'Bebas Neue', Verdana, Tahoma, sans-serif;
     height: 8rem;
     text-align: center;
 }
 
 nav ul {
+    /*-webkit-box-shadow: 0px 4px 7px 1px #000000;*/
+    /*box-shadow: 0px 4px 7px 1px #000000;*/
     display: flex;
     flex-basis: 100%;
     justify-content: space-between;
@@ -127,6 +132,10 @@ nav a:hover {
     display: none;
 }
 
+.active {
+    color: #78bfae;
+}
+
 /***** Login Page *****/
 
 #login,
@@ -180,6 +189,18 @@ input {
     margin: 1rem 0;
 }
 
+/*Show Page*/
+
+#welcome {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+#welcome-details {
+    font-size: 2rem;
+    margin-left: 21rem;
+}
+
 /***** Search Bar *****/
 
 .search-bar {
@@ -196,7 +217,7 @@ input {
     border-radius: 10px;
     border: solid #fff;
     box-sizing: border-box;
-    font: 3rem 'Bebas Neue', cursive, Verdana, Tahoma, sans-serif;
+    font: 3rem 'Roboto', cursive, Verdana, Tahoma, sans-serif;
     margin: 8px 0;
     padding: 5px 2px;
     width: 20rem;
@@ -240,12 +261,197 @@ input {
     margin-top: 2rem;
 }
 
+/***** All MLMs *****/
+
+#mlm-list {
+    font-size: 3rem;
+    margin-left: 3rem;
+    /*max-width: 80%;*/
+    -webkit-filter: hue-rotate(60deg);
+    filter: hue-rotate(10deg);
+}
+
+#forum-list {
+    font-size: 2rem;
+    list-style-type: none;
+    margin: 1rem auto;
+    max-width: 80rem;
+    width: 100%;
+}
+
+#forum-h1,
+#mlm-forum-h1 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+#forum-list h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2b3d28;
+    margin: .5rem 0;
+}
+
+.forum-links {
+    background-color: #78bfae;
+    border: #2b3d28 solid 5px;
+    border-radius: 10px;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.forum-links a,
+.home-mlm-link {
+    color: #000;
+    font-size: 1rem;
+    transition: all .3s ease-in-out;
+}
+
+.forum-links a:hover,
+.home-mlm-link:hover {
+    color: #fff;
+    transition: all .3s ease-in-out;
+}
+
+.forum-links a:nth-of-type(2) {
+    margin-left: 2rem;
+}
+
+#mlm-error,
+#error-link {
+    font-size: 1rem;
+}
+
+/***** Forum Pages *****/
+
+#new-form span {
+    background-color: #78bfae;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.5rem;
+    margin-left: 2rem;
+    padding: 1rem;
+}
+
+#new-form span:hover,
+#submit-button {
+    cursor: pointer;
+}
+
+#new-form form {
+    margin: 3rem 2rem;
+}
+
+#post-title,
+#post-body,
+#comment {
+    border: #78bfae solid 1px;
+    border-radius: 10px;
+    font: 1rem 'Roboto', Verdana, Tahoma, sans-serif;
+}
+
+#submit-button {
+    background-color: #78bfae;
+    border: #78bfae solid 1px;
+    border-radius: 10px;
+    color: white;
+    margin-top: 1rem;
+    padding: .5rem;
+}
+
+#new-form input,
+#submit-button {
+    display: block;
+}
+
+.forum-posts {
+    margin: 1rem;
+}
+
+.replies {
+    background-color: #78bfae;
+    border-radius: 10px;
+    color: #fff;
+    padding: .5rem;
+}
+
+.replies:first-of-type {
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+/***** Recent Posts *****/
+
+.posts-list {
+    font-size: 1rem;
+    margin: 1rem auto;
+    max-width: 80rem;
+    width: 100%;
+}
+
+.posts-list article {
+    border: #78bfae 5px solid;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.recent-titles {
+    color: #78bfae;
+}
+
+.recent-post {
+    font-style: italic;
+}
+
+.mlm-link {
+    color: #78bfae;
+}
+
+.view-comments {
+    background-color: #78bfae;
+    border-radius: 10px;
+    color: #2b3d28;
+    display: inline-block;
+    margin-top: 1rem;
+    padding: .5rem;
+    text-decoration: none;
+}
+
+#comment-form {
+    margin: 1rem;
+}
+
+#reply-heading {
+    color: #78bfae;
+    margin: 1rem;
+}
+
+/***** Show page *****/
+
+.single-post {
+    margin: 1rem;
+}
+
+#comments span {
+    font-weight: bold;
+}
+
+.comment-and-reply-btn {
+    border: #78bfae 2px solid;
+    border-radius: 10px;
+    margin: 1rem;
+    max-width: 60rem;
+    padding: .5rem;
+}
+
 /***** Footer *****/
 
 footer {
     align-items: flex-end;
     background-color: #78bfae;
     display: flex;
+    font-family: 'Bebas Neue', Verdana, Tahoma, sans-serif;
     justify-content: space-between;
     margin-top: auto;
     padding: 1rem;
@@ -277,13 +483,6 @@ footer p {
 
 .footer-img {
     align-self: center;
-}
-
-/***** MLM Master List *****/
-
-#mlm-list {
-    font-size: 3rem;
-    margin-left: 3rem;
 }
 
 /***** Media Queries *****/

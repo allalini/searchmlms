@@ -17,7 +17,8 @@ include(SHARED_PATH . '/public_header.php');
                  class="mag-glasses" id="glass-lg" draggable="false">
             <div>
                 <form action="index.php" method="POST">
-                    <h1 id="main-h1">Is&nbsp;<input aria-label="organization name" type="search" name="mlm_search" height="30px" id="mlm-search">&nbsp;an&nbsp;MLM?</h1>
+                    <h1 id="main-h1">Is&nbsp;<input aria-label="organization name" type="search" name="mlm_search"
+                                                    height="30px" id="mlm-search">&nbsp;an&nbsp;MLM?</h1>
                 </form>
                 <?php
                 if (is_post_request()) {
@@ -25,16 +26,19 @@ include(SHARED_PATH . '/public_header.php');
                     // check the database for mlm
                     $mlm = Mlm::find_by_mlm_name($mlm_search);
                     if ($mlm) {
-                        if ($mlm->is_mlm == '1') {
-                            echo $mlm->mlm_name . ' is an MLM.';
-                        } else {
-                            echo $mlm->mlm_name . ' is not an MLM.';
+                        if ($mlm->is_mlm == '1') { ?>
+                            <p>Yes, <?= $mlm->mlm_name ?> is an MLM.</p>
+                            <a href="<?=(url_for('/public/forum.php?mlm_id='.$mlm->mlm_id))?>" class="home-mlm-link"><?= $mlm->mlm_name ?> Forum</a>
+                        <a href="https://www.google.com/search?q=<?= $mlm->mlm_name; ?>"
+                           target="_blank" class="home-mlm-link">Search in Google</a><?php
+                        } else { ?>
+                            <p>Nope, <?= $mlm->mlm_name ?> isn't an MLM.</p><?php
                         }
                     } else {
-                        echo "'".$mlm_search."' was not found.";
+                        echo "Sorry, we're not sure what '" . $mlm_search . "' is.";
                     }
-                }
-                ?>
+                } ?>
+
             </div>
             <img src="../images/magnifying-glass-128.png" width="128" height="128" alt="magnifying glass"
                  class="mag-glasses lighter-glasses" id="glass-medium" draggable="false">
@@ -49,14 +53,14 @@ include(SHARED_PATH . '/public_header.php');
                     years, it's become more
                     common on social media. Direct selling companies use multi-level marketing as a strategy to
                     encourage members to recruit more members into the company.
-                    People who are part of MLMs are often called "distributors", "consultants", or "brand partners".
-                    Often times, though, people who think they are working for a MLM company are made to buy products
+                    Those who join MLMs are often called "distributors", "consultants", or "brand partners".
+                    Often times, though, people who work for MLM companies are made to buy products
                     for personal use or run pricey auto shipments, effectively making them customers.
                 </p>
                 <p>
                     It can sometimes be difficult to tell from a company's website if they are an MLM company or not.
                     Use the search feature above and quickly find out if a company operates as an MLM.
-                    You can also check the MLM master list, or check out videos about multi-level marketing on YouTube.
+                    Join in conversations about MLMs, or check out videos about multi-level marketing on YouTube.
                 </p>
             </div>
             <img src="../images/boss.jpg" width="400" height="400" id="boss" alt="boss babe vibes">

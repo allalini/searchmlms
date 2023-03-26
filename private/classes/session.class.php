@@ -1,11 +1,11 @@
 <?php
 
 class Session {
-    private $user_id;
+    public $user_id;
     public $user_first_name;
     public $user_email;
     private $last_login;
-    public const MAX_LOGIN_AGE = 60 * 60 * 24;
+    public const MAX_LOGIN_AGE = 7 * 60 * 60 * 24;
 
     public function __construct() {
         session_start();
@@ -47,7 +47,11 @@ class Session {
             $this->user_first_name = $_SESSION['user_first_name'];
             $this->user_email = $_SESSION['user_email'];
             $this->last_login = $_SESSION['last_login'];
+            if (!$this->last_login_is_recent()){
+                $this->logout();
+            }
         }
+
     }
 
     private function last_login_is_recent() {

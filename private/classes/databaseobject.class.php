@@ -79,7 +79,7 @@ class DatabaseObject {
         //echo confirm_db_connect();
         $result = self::$database->query($sql);
         if ($result) {
-            $this->id = self::$database->insert_id;
+            $this->{static::$table_name . "_id"} = self::$database->insert_id;
         }
         return $result;
     }
@@ -132,7 +132,9 @@ class DatabaseObject {
     protected function sanitized_attributes() {
         $sanitized = [];
         foreach ($this->attributes() as $key => $value) {
-            $sanitized[$key] = self::$database->escape_string($value);
+            if ($value != null) {
+                $sanitized[$key] = self::$database->escape_string($value);
+            }
         }
         return $sanitized;
     }

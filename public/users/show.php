@@ -1,5 +1,5 @@
 <?php require_once('../../private/initialize.php');
-include(SHARED_PATH . '/public_header.php');?>
+include(SHARED_PATH . '/public_header.php'); ?>
 <?php
 
 $id = $_GET['id'] ?? '1';
@@ -8,22 +8,22 @@ $user = User::find_by_id($id);
 
 ?>
 
-<?php $page_title = 'Show User: ' . h($user->full_name()); ?>
+<?php $page_title = 'Welcome, ' . h($user->full_name()); ?>
 
 
-<h1>Welcome, <?php echo h($user->full_name()); ?>!</h1>
+    <h1 id="welcome">Welcome to Search MLMs, <?php echo h($user->full_name()); ?>! So glad you're here.</h1>
 
-<dl>
-    <dt>First name</dt>
-    <dd><?php echo h($user->user_first_name); ?></dd>
-</dl>
-<dl>
-    <dt>Last name</dt>
-    <dd><?php echo h($user->user_last_name); ?></dd>
-</dl>
-<dl>
-    <dt>Email</dt>
-    <dd><?php echo h($user->user_email); ?></dd>
-</dl>
+    <div id="welcome-details">
+        <span>First name:</span>
+        <?php echo h($user->user_first_name); ?><br>
 
+        <span>Last name:</span>
+        <?php echo h($user->user_last_name); ?><br>
 
+        <span>Email:</span>
+        <?php echo h($user->user_email); ?>
+
+        <p>Click <a href="#">here</a> to edit your deets.</p>
+    </div>
+
+<?php include(SHARED_PATH . '/public_footer.php'); ?>

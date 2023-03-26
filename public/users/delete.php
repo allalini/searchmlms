@@ -1,6 +1,6 @@
 <?php
 
-require_once('../../../private/initialize.php');
+require_once('../../private/initialize.php');
 
 if(!isset($_GET['id'])) {
   redirect_to(url_for('/staff/admins/index.php'));
@@ -25,7 +25,7 @@ if(is_post_request()) {
 ?>
 
 <?php $page_title = 'Delete User'; ?>
-<?php include(SHARED_PATH . '/staff_header.php'); ?>
+<?php include(SHARED_PATH . '/admin_header.php'); ?>
 
 <div id="content">
 
@@ -45,4 +45,4 @@ if(is_post_request()) {
 
 </div>
 
-<?php include(SHARED_PATH . '/staff_footer.php'); ?>
+<?php include(SHARED_PATH . '/admin_footer.php'); ?>
