@@ -1,4 +1,6 @@
 <?php
+
+
 $page = $_SERVER['REQUEST_URI'];
 $page = explode('/', $page);
 $page = end($page);
@@ -26,6 +28,12 @@ $page = end($page);
 
 <body>
 <a href="#mlm-search" id="skip-link">Skip to search</a>
+<?php
+/** @var $session */
+if ($session->user_level == 'a') {
+    require(SHARED_PATH . '/admin_header.php');
+}
+?>
 <header>
     <input id="nav-box" type="checkbox">
     <label for="nav-box" id="nav-trigger">Menu</label>

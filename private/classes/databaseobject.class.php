@@ -33,6 +33,10 @@ class DatabaseObject {
         return static::find_by_sql($sql);
     }
 
+    /**
+     * @param $id
+     * @return null|false|DatabaseObject
+     */
     static public function find_by_id($id) {
         $sql = "SELECT * FROM " . static::$table_name . " ";
         $sql .= "WHERE " . static::$table_name . "_id='" . self::$database->escape_string($id) . "'";

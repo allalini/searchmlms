@@ -101,11 +101,6 @@ nav a:hover {
     text-decoration: none;
 }
 
-/*nav li:nth-child(6) {*/
-/*    flex-basis: auto;*/
-/*    margin: 0 0 0 auto;*/
-/*}*/
-
 #nav-box:checked + label {
     text-decoration: underline;
 }
@@ -235,6 +230,20 @@ input {
     margin: 100px 50px;
 }
 
+/*#search-button {*/
+/*    background-color: #fff;*/
+/*    border: none;*/
+/*    height: 3rem;*/
+/*    width: 3rem;*/
+
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    border-radius: 5px;*/
+/*    right: 40rem;*/
+/*    z-index: 2;*/
+/*    top: 2px;*/
+/*}*/
+
 /***** Main Content *****/
 
 #main-content {
@@ -320,6 +329,26 @@ input {
 #mlm-error,
 #error-link {
     font-size: 1rem;
+}
+
+#scroll-up {
+    background-color: #78bfae; /* Set a background color */
+    border: none; /* Remove borders */
+    border-radius: 10px; /* Rounded corners */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    color: #fff; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    /*display: none; !* Hidden by default *!*/
+    font-size: 18px; /* Increase font size */
+    outline: none; /* Remove outline */
+    padding: 15px; /* Some padding */
+    position: fixed; /* Fixed/sticky position */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+}
+
+#scroll-up:hover {
+    background-color: #2b3d28;
 }
 
 /***** Forum Pages *****/
@@ -443,6 +472,89 @@ input {
     margin: 1rem;
     max-width: 60rem;
     padding: .5rem;
+}
+
+/***** Admin Nav *****/
+
+#admin-nav {
+    background-color: #78bfae;
+    display: flex;
+    height: 4rem;
+}
+
+#admin-nav ul {
+    align-items: center;
+}
+
+#admin-nav span {
+    margin: 23px 10px;
+}
+
+#admin-nav a {
+    color: #2b3d28;
+}
+
+#admin-nav a.active {
+    color: #2b3d28;
+}
+
+#admin-nav a:hover {
+    color: #78bfae;
+}
+
+#admin-nav .dropbtn {
+    background-color: inherit;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 2rem;
+    /*margin-left: .5rem;*/
+    outline: none;
+    padding: 14px 16px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.show {
+    display: block;
+}
+
+/***** Admin *****/
+
+#admin-new,
+.content {
+    margin-left: 2rem;
+}
+
+.list th,
+.content td,
+#create-h1,
+.user-edit {
+    padding-left: 1rem;
+}
+
+#delete {
+    padding: 1rem;
+}
+
+.item {
+    font-weight: bold;
+}
+
+.admin-submit {
+    background-color: #78bfae;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 1rem;
+    margin-left: 2.5rem;
 }
 
 /***** Footer *****/
@@ -690,4 +802,3 @@ footer p {
         order: -1;
     }
 }
-

@@ -23,7 +23,6 @@ $user = User::find_by_id($id);
         <span>Email:</span>
         <?php echo h($user->user_email); ?>
 
-        <p>Click <a href="#">here</a> to edit your deets.</p>
     </div>
 
 <?php include(SHARED_PATH . '/public_footer.php'); ?>

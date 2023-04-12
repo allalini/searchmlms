@@ -80,6 +80,27 @@ class User extends DatabaseObject {
         return parent::update();
     }
 
+    public function adminUpdate() {
+        $this->adminValidate();
+        if (!empty($this->errors)) {
+            return false;
+        }
+
+        $attributes = $this->sanitized_attributes();
+        $attribute_pairs = [];
+        foreach ($attributes as $key => $value) {
+            if ($key != 'user_password') {
+                $attribute_pairs[] = "{$key}='{$value}'";
+            }
+        }
+        $sql = "UPDATE " . static::$table_name . " SET ";
+        $sql .= join(', ', $attribute_pairs);
+        $sql .= " WHERE " . static::$table_name . "_id='" . self::$database->escape_string($this->id) . "' ";
+        $sql .= "LIMIT 1";
+        $result = self::$database->query($sql);
+        return $result;
+    }
+
     public function validate() {
         $this->errors = [];
 
@@ -132,6 +153,35 @@ class User extends DatabaseObject {
         return $this->errors;
     }
 
+    public function adminValidate() {
+        $this->errors = [];
+
+        if (!($this->user_level == 'a' || $this->user_level == 'm')) {
+            $this->errors[] = "User level must be set to a or m";
+        }
+
+        if (is_blank($this->user_first_name)) {
+            $this->errors[] = "First name cannot be blank.";
+        } elseif (!has_length($this->user_first_name, array('min' => 1, 'max' => 255))) {
+            $this->errors[] = "First name must be between 1 and 255 characters.";
+        }
+
+        if (is_blank($this->user_last_name)) {
+            $this->errors[] = "Last name cannot be blank.";
+        } elseif (!has_length($this->user_last_name, array('min' => 1, 'max' => 255))) {
+            $this->errors[] = "Last name must be between 1 and 255 characters.";
+        }
+
+        if (is_blank($this->user_email)) {
+            $this->errors[] = "Email cannot be blank.";
+        } elseif (!has_length($this->user_email, array('max' => 255))) {
+            $this->errors[] = "Last name must be less than 255 characters.";
+        } elseif (!has_valid_email_format($this->user_email)) {
+            $this->errors[] = "Email must be a valid format.";
+        }
+        return $this->errors;
+    }
+
     /**
      * @param $user_email
      * @return false|User
@@ -151,5 +201,13 @@ class User extends DatabaseObject {
         return password_verify($password, $this->user_password);
     }
 
+    public function delete() {
+        $sql = "DELETE FROM " . static::$table_name . " ";
+        $sql .= "WHERE " . static::$table_name . "_id='" . self::$database->escape_string($this->id) . "' ";
+        $sql .= "LIMIT 1";
+        echo $sql;
+        $result = self::$database->query($sql);
+        return $result;
+    }
 
 }
