@@ -20,7 +20,7 @@ if (is_post_request()) {
 
     // Save record using post parameters
     $post->merge_attributes($_POST);
-    $result = $post->adminUpdate();
+    $result = $post->save();
 
     if ($result === true) {
         /** @var $session */
