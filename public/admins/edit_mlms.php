@@ -41,15 +41,17 @@ if (is_post_request()) {
 
     <h1>Edit MLM</h1>
 
-    <form action="<?php echo url_for('/public/admins/edit_mlms.php?id=' . h(u($id))); ?>" method="post" style="display: flex; flex-direction: column;">
+    <form action="<?php echo url_for('/public/admins/edit_mlms.php?id=' . h(u($id))); ?>" method="post"
+          style="display: flex; flex-direction: column;">
         <label for="mlm_name">MLM Name:</label>
-        <input type="text" required id="mlm_name" name="mlm_name" value="<?=$mlm->mlm_name ?? ''?>"/>
+        <input type="text" required id="mlm_name" name="mlm_name" value="<?= $mlm->mlm_name ?? '' ?>"/>
 
         <label for="is-mlm">Is MLM:</label>
         <div>
-        <input type="radio" id="mlm-yes" name="is_mlm" value="1" <?=$mlm->is_mlm =="1" ? 'checked':''?>/><label for="mlm-yes">Yes</label></div>
-        <div><input type="radio" id="mlm-no" name="is_mlm" value="0" <?=$mlm->is_mlm =="0" ? 'checked':''?>/><label for="mlm-no">No</label></div>
-<?php var_dump($mlm)?>
+            <input type="radio" id="mlm-yes" name="is_mlm" value="1" <?= $mlm->is_mlm == "1" ? 'checked' : '' ?>/><label
+                    for="mlm-yes">Yes</label></div>
+        <div><input type="radio" id="mlm-no" name="is_mlm" value="0" <?= $mlm->is_mlm == "0" ? 'checked' : '' ?>/><label
+                    for="mlm-no">No</label></div>
         <input type="submit" value="Save" class="admin-submit"/>
 
     </form>

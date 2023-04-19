@@ -23,17 +23,43 @@ $mlms = Mlm::find_all();
                 <th>Is MLM</th>
             </tr>
 
-            <?php foreach($mlms as $mlm) { ?>
-                <tr>
+            <?php foreach ($mlms as $mlm) { ?>
+                <tr class="admin-tables">
                     <td><?= ($mlm->mlm_id) ?></td>
                     <td><?= h($mlm->mlm_name) ?></td>
                     <td><?= ($mlm->is_mlm ? 'Yes' : 'No') ?></td>
-                    <td><a class="action" href="<?= url_for('/public/admins/edit_mlms.php?id=' . h(u($mlm->id))) ?>">Edit</a></td>
+                    <td><a class="action" href="<?= url_for('/public/admins/edit_mlms.php?id=' . h(u($mlm->id))) ?>">Edit</a>
+                    </td>
                 </tr>
             <?php } ?>
         </table>
 
     </div>
+
+    <script>
+        // Get the button:
+        // let scrollup = document.getElementById("scroll-up");
+        //
+        // // When the user scrolls down 20px from the top of the document, show the button
+        // window.onscroll = function () {
+        //     scrollFunction()
+        // };
+        //
+        // function scrollFunction() {
+        //     if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        //         scrollup.style.display = "block";
+        //     } else {
+        //         scrollup.style.display = "none";
+        //     }
+        // }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+    </script>
+    <button onclick="topFunction()" id="scroll-up" title="Go to top">Top</button>
 
 </div>
 

@@ -541,6 +541,10 @@ input {
     padding-left: 1rem;
 }
 
+.list {
+    margin-bottom: 1rem;
+}
+
 #delete {
     padding: 1rem;
 }
@@ -553,8 +557,39 @@ input {
     background-color: #78bfae;
     cursor: pointer;
     display: inline-block;
-    margin-bottom: 1rem;
-    margin-left: 2.5rem;
+    margin:1rem 0;
+}
+
+.admin-tables {
+    background-color: #78bfae;
+}
+
+.admin-tables td {
+    border: 3px solid #2b3d28;
+    padding: .5rem 1rem;
+}
+
+/***** New MLM *****/
+
+#new-mlm {
+    margin-left: 2rem;
+}
+
+#new-mlm input,
+.user-edit input {
+    margin-top: .5rem;
+}
+
+#mlm-yes,
+#mlm-no {
+    width: 2rem;
+}
+
+/***** Admin Edit Users *****/
+
+#user-level {
+    margin: .5rem 0;
+    width: 2.5rem;
 }
 
 /***** Footer *****/

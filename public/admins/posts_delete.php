@@ -25,7 +25,7 @@ $users = User::find_all();
             </tr>
 
             <?php foreach($posts as $post) { ?>
-                <tr>
+                <tr class="admin-tables">
                     <td><?php echo h($post->id); ?></td>
                     <td><?php echo h($post->user_id); ?></td>
                     <td><?php echo h($post->post_date); ?></td>

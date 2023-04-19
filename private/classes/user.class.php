@@ -157,7 +157,7 @@ class User extends DatabaseObject {
         $this->errors = [];
 
         if (!($this->user_level == 'a' || $this->user_level == 'm')) {
-            $this->errors[] = "User level must be set to a or m";
+            $this->errors[] = "User level must be set to a (admin) or m (member)";
         }
 
         if (is_blank($this->user_first_name)) {

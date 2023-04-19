@@ -26,7 +26,7 @@ $users = User::find_all();
             </tr>
 
             <?php foreach($users as $user) { ?>
-                <tr>
+                <tr class="admin-tables">
                     <td><?php echo h($user->id); ?></td>
                     <td><?php echo h($user->user_level); ?></td>
                     <td><?php echo h($user->user_first_name); ?></td>
