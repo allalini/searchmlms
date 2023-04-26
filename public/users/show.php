@@ -21,7 +21,9 @@ $user = User::find_by_id($id);
         <?php echo h($user->user_last_name); ?><br>
 
         <span>Email:</span>
-        <?php echo h($user->user_email); ?>
+        <?php echo h($user->user_email); ?><br>
+
+        <a href="<?= url_for('/public/users/login.php') ?>" id="new-login">Log in now!</a>
 
     </div>
 

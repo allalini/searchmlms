@@ -5,7 +5,7 @@ include(SHARED_PATH . '/public_header.php');
 // user enters search, then hits enter to submit
 // POST with form data like: mlm_search: 'whatever'
 // PHP parses form data into $_POST dictionary
-// we pull mlm_search into php variable of the same name
+// pull mlm_search into php variable of the same name
 ?>
     <main id="main">
         <header class="search-bar">
@@ -19,7 +19,6 @@ include(SHARED_PATH . '/public_header.php');
                 <form action="index.php" method="POST">
                     <h1 id="main-h1">Is&nbsp;<input aria-label="organization name" type="search" name="mlm_search"
                                                     height="30px" id="mlm-search">&nbsp;an&nbsp;MLM?</h1>
-                    <input type="submit" name="submit" id="search-button" value="Search">
                 </form>
                 <?php
                 if (is_post_request()) {

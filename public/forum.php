@@ -2,6 +2,10 @@
 include(SHARED_PATH . '/public_header.php'); ?>
 
 <?php
+/** @var $session */
+if (!$session->is_logged_in()) {
+    redirect_to(url_for('public/users/login.php?redirected=1'));
+}
 $id = $_GET['mlm_id'] ?? '1';
 $mlm = Mlm::find_by_id($id);
 $posts = Post::find_by_mlm_id($id);

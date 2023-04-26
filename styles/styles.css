@@ -3,6 +3,9 @@
 :root {
     --sm-padding: 0.5rem;
     --lg-padding: 1rem;
+    --larger-padding: 2rem;
+    --dark-color: #145699;
+    --light-color: #a3d1ff;
 }
 
 *,
@@ -23,6 +26,8 @@ body {
     min-height: 100vh;
 }
 
+/***** Skip to search link *****/
+
 #skip-link {
     background-color: #000;
     border: #fff solid 4px;
@@ -40,14 +45,12 @@ body {
 /***** Nav *****/
 
 #logo {
-    display: none;
     pointer-events: none;
 }
 
 #logo-link {
     display: none;
     pointer-events: none;
-    user-focus: none;
 }
 
 header {
@@ -60,7 +63,7 @@ header img {
 }
 
 nav {
-    background-color: #2b3d28;
+    background-color: var(--dark-color);
     display: flex;
     font-family: 'Bebas Neue', Verdana, Tahoma, sans-serif;
     height: 8rem;
@@ -68,12 +71,10 @@ nav {
 }
 
 nav ul {
-    /*-webkit-box-shadow: 0px 4px 7px 1px #000000;*/
-    /*box-shadow: 0px 4px 7px 1px #000000;*/
     display: flex;
     flex-basis: 100%;
     justify-content: space-between;
-    gap: 1rem;
+    gap: var(--lg-padding);
     margin: 0;
     padding: 0;
 }
@@ -97,9 +98,15 @@ nav a {
 }
 
 nav a:hover {
-    color: #78bfae;
+    color: var(--light-color);
     text-decoration: none;
 }
+
+.active {
+    color: var(--light-color);
+}
+
+/***** Mobile nav *****/
 
 #nav-box:checked + label {
     text-decoration: underline;
@@ -127,17 +134,13 @@ nav a:hover {
     display: none;
 }
 
-.active {
-    color: #78bfae;
-}
-
 /***** Login Page *****/
 
 #login,
 #signup {
     display: grid;
     justify-items: center;
-    margin: 2rem;
+    margin: var(--larger-padding);
 }
 
 #login h1,
@@ -147,13 +150,13 @@ nav a:hover {
 
 #login form,
 #signup form {
-    font-size: 2rem;
+    font-size: var(--larger-padding);
 }
 
 #signup-submit,
 #login-button {
-    background-color: #78bfae;
-    border: #78bfae;
+    background-color: var(--light-color);
+    border: var(--light-color);
     border-radius: 10px;
     color: #fff;
     cursor: pointer;
@@ -163,28 +166,43 @@ nav a:hover {
 
 #signup-submit:hover,
 #login-button:hover {
-    color: #2b3d28;
+    color: var(--dark-color);
 }
 
 input {
-    border: solid 3px #2b3d28;
+    border: solid 3px var(--dark-color);
     border-radius: 10px;
     margin-bottom: .5rem;
     padding: .5rem;
     width: 18rem;
 }
 
+#new-login {
+
+}
+
 /***** Sign up Page *****/
+
 #signup-form {
     display: flex;
     flex-direction: column;
 }
 
 #signup-submit {
-    margin: 1rem 0;
+    margin: var(--lg-padding) 0;
 }
 
-/*Show Page*/
+#signup-link,
+#new-login {
+    color: var(--dark-color);
+}
+
+#signup-link:hover,
+#new-login:hover {
+    color: var(--light-color);
+}
+
+/***** Show Page *****/
 
 #welcome {
     margin-top: 3rem;
@@ -192,20 +210,20 @@ input {
 }
 
 #welcome-details {
-    font-size: 2rem;
+    font-size: var(--larger-padding);
     margin-left: 21rem;
 }
 
-/***** Search Bar *****/
+/***** Home page MLM search *****/
 
 .search-bar {
-    background-color: #78bfae;
+    background-color: var(--light-color);
     display: flex;
     flex-direction: row;
-    font-size: 2rem;
+    font-size: var(--larger-padding);
     height: 20rem;
     justify-content: center;
-    padding-top: 2rem;
+    padding-top: var(--larger-padding);
 }
 
 #mlm-search {
@@ -216,6 +234,10 @@ input {
     margin: 8px 0;
     padding: 5px 2px;
     width: 20rem;
+}
+
+#main-h1 {
+    text-align: center;
 }
 
 .mag-glasses {
@@ -230,33 +252,19 @@ input {
     margin: 100px 50px;
 }
 
-/*#search-button {*/
-/*    background-color: #fff;*/
-/*    border: none;*/
-/*    height: 3rem;*/
-/*    width: 3rem;*/
-
-/*    position: absolute;*/
-/*    top: 0;*/
-/*    border-radius: 5px;*/
-/*    right: 40rem;*/
-/*    z-index: 2;*/
-/*    top: 2px;*/
-/*}*/
-
 /***** Main Content *****/
 
 #main-content {
     display: grid;
     grid-template-columns: 45rem 25rem;
-    margin: 1rem;
+    margin: var(--lg-padding);
     justify-content: center;
     column-gap: 16rem;
 }
 
 #main-content h2 {
     font-size: 3rem;
-    margin-bottom: 2rem;
+    margin-bottom: var(--larger-padding);
 }
 
 #main-content p {
@@ -267,7 +275,7 @@ input {
     border-radius: 10px;
     box-shadow: 10px 10px 5px rgb(88, 88, 88);
     grid-column: 2;
-    margin-top: 2rem;
+    margin-top: var(--larger-padding);
 }
 
 /***** All MLMs *****/
@@ -281,9 +289,9 @@ input {
 }
 
 #forum-list {
-    font-size: 2rem;
+    font-size: var(--larger-padding);
     list-style-type: none;
-    margin: 1rem auto;
+    margin: var(--lg-padding) auto;
     max-width: 80rem;
     width: 100%;
 }
@@ -295,24 +303,24 @@ input {
 }
 
 #forum-list h3 {
-    font-size: 2rem;
+    font-size: var(--larger-padding);
     font-weight: bold;
-    color: #2b3d28;
+    color: var(--dark-color);
     margin: .5rem 0;
 }
 
 .forum-links {
-    background-color: #78bfae;
-    border: #2b3d28 solid 5px;
+    background-color: var(--light-color);
+    border: var(--dark-color) solid 5px;
     border-radius: 10px;
-    margin: 1rem;
-    padding: 1rem;
+    margin: var(--lg-padding);
+    padding: var(--lg-padding);
 }
 
 .forum-links a,
 .home-mlm-link {
     color: #000;
-    font-size: 1rem;
+    font-size: var(--lg-padding);
     transition: all .3s ease-in-out;
 }
 
@@ -323,17 +331,17 @@ input {
 }
 
 .forum-links a:nth-of-type(2) {
-    margin-left: 2rem;
+    margin-left: var(--larger-padding);
 }
 
 #mlm-error,
 #error-link {
-    font-size: 1rem;
+    font-size: var(--lg-padding);
 }
 
 #scroll-up {
-    background-color: #78bfae; /* Set a background color */
-    border: none; /* Remove borders */
+    background-color: var(--light-color); /* Set a background color */
+    border: 5px solid var(--dark-color); /* Remove borders */
     border-radius: 10px; /* Rounded corners */
     bottom: 20px; /* Place the button at the bottom of the page */
     color: #fff; /* Text color */
@@ -348,18 +356,18 @@ input {
 }
 
 #scroll-up:hover {
-    background-color: #2b3d28;
+    background-color: var(--dark-color);
 }
 
 /***** Forum Pages *****/
 
 #new-form span {
-    background-color: #78bfae;
+    background-color: var(--light-color);
     border-radius: 10px;
     color: #fff;
     font-size: 1.5rem;
-    margin-left: 2rem;
-    padding: 1rem;
+    margin-left: var(--larger-padding);
+    padding: var(--lg-padding);
 }
 
 #new-form span:hover,
@@ -368,23 +376,23 @@ input {
 }
 
 #new-form form {
-    margin: 3rem 2rem;
+    margin: 3rem;
 }
 
 #post-title,
 #post-body,
 #comment {
-    border: #78bfae solid 1px;
+    border: var(--light-color) solid 1px;
     border-radius: 10px;
-    font: 1rem 'Roboto', Verdana, Tahoma, sans-serif;
+    font: var(--lg-padding) 'Roboto', Verdana, Tahoma, sans-serif;
 }
 
 #submit-button {
-    background-color: #78bfae;
-    border: #78bfae solid 1px;
+    background-color: var(--light-color);
+    border: var(--light-color) solid 1px;
     border-radius: 10px;
     color: white;
-    margin-top: 1rem;
+    margin-top: var(--lg-padding);
     padding: .5rem;
 }
 
@@ -394,11 +402,11 @@ input {
 }
 
 .forum-posts {
-    margin: 1rem;
+    margin: var(--lg-padding);
 }
 
 .replies {
-    background-color: #78bfae;
+    background-color: var(--light-color);
     border-radius: 10px;
     color: #fff;
     padding: .5rem;
@@ -406,27 +414,27 @@ input {
 
 .replies:first-of-type {
     display: inline-block;
-    margin-bottom: 1rem;
+    margin-bottom: var(--lg-padding);
 }
 
 /***** Recent Posts *****/
 
 .posts-list {
-    font-size: 1rem;
-    margin: 1rem auto;
+    font-size: var(--lg-padding);
+    margin: var(--lg-padding) auto;
     max-width: 80rem;
     width: 100%;
 }
 
 .posts-list article {
-    border: #78bfae 5px solid;
+    border: var(--light-color) 5px solid;
     border-radius: 10px;
-    padding: 1rem;
-    margin: 1rem;
+    padding: var(--lg-padding);
+    margin: var(--lg-padding);
 }
 
 .recent-titles {
-    color: #78bfae;
+    color: var(--light-color);
 }
 
 .recent-post {
@@ -434,32 +442,32 @@ input {
 }
 
 .mlm-link {
-    color: #78bfae;
+    color: var(--light-color);
 }
 
 .view-comments {
-    background-color: #78bfae;
+    background-color: var(--light-color);
     border-radius: 10px;
-    color: #2b3d28;
+    color: var(--dark-color);
     display: inline-block;
-    margin-top: 1rem;
+    margin-top: var(--lg-padding);
     padding: .5rem;
     text-decoration: none;
 }
 
 #comment-form {
-    margin: 1rem;
+    margin: var(--lg-padding);
 }
 
 #reply-heading {
-    color: #78bfae;
-    margin: 1rem;
+    color: var(--light-color);
+    margin: var(--lg-padding);
 }
 
 /***** Show page *****/
 
 .single-post {
-    margin: 1rem;
+    margin: var(--lg-padding);
 }
 
 #comments span {
@@ -467,9 +475,9 @@ input {
 }
 
 .comment-and-reply-btn {
-    border: #78bfae 2px solid;
+    border: var(--light-color) 2px solid;
     border-radius: 10px;
-    margin: 1rem;
+    margin: var(--lg-padding);
     max-width: 60rem;
     padding: .5rem;
 }
@@ -477,7 +485,7 @@ input {
 /***** Admin Nav *****/
 
 #admin-nav {
-    background-color: #78bfae;
+    background-color: var(--light-color);
     display: flex;
     height: 4rem;
 }
@@ -491,15 +499,15 @@ input {
 }
 
 #admin-nav a {
-    color: #2b3d28;
+    color: var(--dark-color);
 }
 
 #admin-nav a.active {
-    color: #2b3d28;
+    color: var(--dark-color);
 }
 
 #admin-nav a:hover {
-    color: #78bfae;
+    color: var(--light-color);
 }
 
 #admin-nav .dropbtn {
@@ -508,7 +516,7 @@ input {
     color: white;
     cursor: pointer;
     font-family: inherit;
-    font-size: 2rem;
+    font-size: var(--larger-padding);
     /*margin-left: .5rem;*/
     outline: none;
     padding: 14px 16px;
@@ -531,22 +539,22 @@ input {
 
 #admin-new,
 .content {
-    margin-left: 2rem;
+    margin-left: var(--larger-padding);
 }
 
 .list th,
 .content td,
 #create-h1,
 .user-edit {
-    padding-left: 1rem;
+    padding-left: var(--lg-padding);
 }
 
 .list {
-    margin-bottom: 1rem;
+    margin-bottom: var(--lg-padding);
 }
 
 #delete {
-    padding: 1rem;
+    padding: var(--lg-padding);
 }
 
 .item {
@@ -554,25 +562,25 @@ input {
 }
 
 .admin-submit {
-    background-color: #78bfae;
+    background-color: var(--light-color);
     cursor: pointer;
     display: inline-block;
     margin:1rem 0;
 }
 
 .admin-tables {
-    background-color: #78bfae;
+    background-color: var(--light-color);
 }
 
 .admin-tables td {
-    border: 3px solid #2b3d28;
-    padding: .5rem 1rem;
+    border: 3px solid var(--dark-color);
+    padding: .5rem;
 }
 
 /***** New MLM *****/
 
 #new-mlm {
-    margin-left: 2rem;
+    margin-left: var(--larger-padding);
 }
 
 #new-mlm input,
@@ -582,7 +590,7 @@ input {
 
 #mlm-yes,
 #mlm-no {
-    width: 2rem;
+    width: var(--larger-padding);
 }
 
 /***** Admin Edit Users *****/
@@ -596,12 +604,12 @@ input {
 
 footer {
     align-items: flex-end;
-    background-color: #78bfae;
+    background-color: var(--light-color);
     display: flex;
     font-family: 'Bebas Neue', Verdana, Tahoma, sans-serif;
     justify-content: space-between;
     margin-top: auto;
-    padding: 1rem;
+    padding: var(--lg-padding);
 }
 
 footer ul {
@@ -610,7 +618,7 @@ footer ul {
 
 footer li {
     color: #000;
-    font-size: 2rem;
+    font-size: var(--larger-padding);
     text-decoration: none;
 }
 
@@ -625,7 +633,7 @@ footer a:hover {
 }
 
 footer p {
-    font-size: 1rem;
+    font-size: var(--lg-padding);
 }
 
 .footer-img {
@@ -634,21 +642,32 @@ footer p {
 
 /***** Media Queries *****/
 
-/***** 1765 *****/
-@media screen and (max-width: 1765px) {
+/***** 1892 *****/
+@media screen and (max-width: 1892px) {
     #main-h1 {
-        font-size: 3rem;
-    }
-
-    #mlm-search {
         font-size: 2.5rem;
     }
 }
 
-/***** 1678 *****/
-@media screen and (max-width: 1678px) {
+/***** 1765 *****/
+@media screen and (max-width: 1765px) {
     #main-h1 {
-        font-size: 2rem;
+        font-size: var(--larger-padding);
+    }
+
+    #mlm-search {
+        font-size: var(--larger-padding);
+    }
+}
+
+/***** 1722 *****/
+@media screen and (max-width: 1722px) {
+    #main-h1 {
+        font-size: 1.5rem;
+    }
+
+    #mlm-search {
+        font-size: 1.5rem;
     }
 
     .search-bar {
@@ -656,15 +675,19 @@ footer p {
     }
 }
 
-/***** 1648 *****/
-@media screen and (max-width: 1648px) {
+/***** 1680 *****/
+@media screen and (max-width: 1680px) {
     #glass-medium,
     #glass-lg {
         display: none;
     }
 
+    #main-h1 {
+        font-size: var(--larger-padding);
+    }
+
     #mlm-search {
-        font-size: 1.5rem;
+        font-size: var(--larger-padding);
         height: 3rem;
     }
 }
@@ -679,22 +702,18 @@ footer p {
 
 /***** 1408 *****/
 @media screen and (max-width: 1408px) {
-    /*nav li:nth-child(6) {*/
-    /*    padding-right: 3rem;*/
-    /*}*/
-
     nav li {
         flex-basis: 10rem;
     }
 
     nav li a {
-        padding: 0 1rem;
+        padding: 0 var(--lg-padding);
     }
 
     #main-content {
         display: flex;
         flex-direction: column;
-        margin: 1rem;
+        margin: var(--lg-padding);
         justify-content: center;
         column-gap: 16rem;
         width: 90%;
@@ -745,7 +764,7 @@ footer p {
 
     #logo {
         display: block;
-        margin: 1rem 1rem;
+        margin: var(--lg-padding) var(--lg-padding);
         height: 5rem;
         width: 5rem;
     }
@@ -767,7 +786,7 @@ footer p {
 /***** 930 *****/
 @media screen and (max-width: 930px) {
     nav a {
-        font-size: 2rem;
+        font-size: var(--larger-padding);
     }
 }
 
@@ -827,10 +846,10 @@ footer p {
 
     footer {
         align-items: center;
-        background-color: #78bfae;
+        background-color: var(--light-color);
         flex-direction: column;
         margin-top: auto;
-        padding: 1rem;
+        padding: var(--lg-padding);
     }
 
     footer ul {

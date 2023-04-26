@@ -57,7 +57,7 @@ if (is_post_request()) {
             <input type="submit" name="submit" id="login-button" value="Log in"/>
         </form>
 
-        <h2>Don't have an account? Click <a href="signup.php">here</a> to sign up and join conversations about MLMs.
+        <h2>Don't have an account? Click <a href="signup.php" id="signup-link">here</a> to sign up and join conversations about MLMs.
         </h2>
     </div>
 </div>

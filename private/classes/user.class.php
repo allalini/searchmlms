@@ -153,6 +153,10 @@ class User extends DatabaseObject {
         return $this->errors;
     }
 
+    /**
+     * Specifies how admins can update user information
+     * @return array|mixed
+     */
     public function adminValidate() {
         $this->errors = [];
 

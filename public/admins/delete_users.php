@@ -19,7 +19,7 @@ $users = User::find_all();
         <table class="list">
             <tr>
                 <th>ID</th>
-                <th>User Level</th>
+                <th>User level</th>
                 <th>First name</th>
                 <th>Last name</th>
                 <th>Email</th>
