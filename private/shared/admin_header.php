@@ -7,7 +7,7 @@ $page = end($page);
 
 <header>
     <nav id="admin-nav">
-        <span>Admin Tools</span>
+        <span><i class="fa-solid fa-screwdriver-wrench fa-beat fa-xl" style="color: #fff"></i>&nbsp; Admin Tools</span>
         <div class="user-dropdown">
             <button class="dropbtn" onclick="showUserDropdown()">Users</button>
             <ul class="dropdown-content" id="userDropdown">

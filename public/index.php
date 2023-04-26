@@ -9,41 +9,41 @@ include(SHARED_PATH . '/public_header.php');
 ?>
     <main id="main">
         <header class="search-bar">
-            <img src="../images/magnifying-glass-128.png" width="128" height="128" alt="magnifying glass"
-                 class="mag-glasses" id="first-glass" draggable="false">
-            <img src="../images/magnifying-glass-64.png" width="64" height="64" alt="magnifying glass"
-                 class="mag-glasses lighter-glasses" id="glass-2" draggable="false">
-            <img src="../images/magnifying-glass-640.png" width="256" height="256" alt="magnifying glass"
-                 class="mag-glasses" id="glass-lg" draggable="false">
-            <div>
+            <div class="hero-fg">
                 <form action="index.php" method="POST">
-                    <h1 id="main-h1">Is&nbsp;<input aria-label="organization name" type="search" name="mlm_search"
-                                                    height="30px" id="mlm-search">&nbsp;an&nbsp;MLM?</h1>
+                    <h1 id="main-h1">Is&nbsp;<input aria-label="organization name" type="search" name="mlm_search" id="mlm-search">&nbsp;an&nbsp;MLM?</h1>
                 </form>
-                <?php
-                if (is_post_request()) {
-                    $mlm_search = $_POST['mlm_search'] ?? '';
-                    // check the database for mlm
-                    $mlm = Mlm::find_by_mlm_name($mlm_search);
-                    if ($mlm) {
-                        if ($mlm->is_mlm == '1') { ?>
-                            <p>Yes, <?= $mlm->mlm_name ?> is an MLM.</p>
-                            <a href="<?=(url_for('/public/forum.php?mlm_id='.$mlm->mlm_id))?>" class="home-mlm-link"><?= $mlm->mlm_name ?> Forum</a>
-                        <a href="https://www.google.com/search?q=<?= $mlm->mlm_name; ?>"
-                           target="_blank" class="home-mlm-link">Search in Google</a><?php
-                        } else { ?>
-                            <p>Nope, <?= $mlm->mlm_name ?> isn't an MLM.</p><?php
+
+                <div class="search-results">
+                    <?php
+                    if (is_post_request()) {
+                        $mlm_search = $_POST['mlm_search'] ?? '';
+                        // check the database for mlm
+                        $mlm = Mlm::find_by_mlm_name($mlm_search);
+                        if ($mlm) {
+                            if ($mlm->is_mlm == '1') { ?>
+                                <p>Yes, <?= $mlm->mlm_name ?> is an MLM.</p>
+                                <a href="<?= (url_for('/public/forum.php?mlm_id=' . $mlm->mlm_id)) ?>"
+                                   class="home-mlm-link"><?= $mlm->mlm_name ?> Forum</a>
+                            <a href="https://www.google.com/search?q=<?= $mlm->mlm_name; ?>"
+                               target="_blank" class="home-mlm-link">Search in Google</a><?php
+                            } else { ?>
+                                <p>Nope, <?= $mlm->mlm_name ?> isn't an MLM.</p><?php
+                            }
+                        } else {
+                            echo "Sorry, we're not sure what '" . $mlm_search . "' is.";
                         }
-                    } else {
-                        echo "Sorry, we're not sure what '" . $mlm_search . "' is.";
-                    }
-                } ?>
+                    } ?>
+                </div>
 
             </div>
-            <img src="../images/magnifying-glass-128.png" width="128" height="128" alt="magnifying glass"
-                 class="mag-glasses lighter-glasses" id="glass-medium" draggable="false">
-            <img src="../images/magnifying-glass-640.png" width="216" height="216" alt="magnifying glass"
-                 class="mag-glasses" id="glass-last" draggable="false">
+            <div class="hero-bg">
+                <img src="../images/magnifying-glass-128.png" width="128" height="128" alt="">
+                <img src="../images/magnifying-glass-64.png" width="64" height="64" alt="">
+                <img src="../images/magnifying-glass-640.png" width="256" height="256" alt="">
+                <img src="../images/magnifying-glass-128.png" width="128" height="128" alt="">
+                <img src="../images/magnifying-glass-640.png" width="216" height="216" alt="">
+            </div>
         </header>
 
         <div id="main-content">
@@ -63,7 +63,7 @@ include(SHARED_PATH . '/public_header.php');
                     Join in conversations about MLMs, or check out videos about multi-level marketing on YouTube.
                 </p>
             </div>
-            <img src="../images/boss.jpg" width="400" height="400" id="boss" alt="boss babe vibes">
+            <img src="../images/boss.png" width="400" height="400" id="boss" alt="boss babe vibes">
         </div>
     </main>
 <?php include(SHARED_PATH . '/public_footer.php'); ?>

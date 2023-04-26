@@ -23,7 +23,7 @@ $page = end($page);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-
+    <script src="https://kit.fontawesome.com/02db314e57.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -49,12 +49,10 @@ if ($session->user_level == 'a') {
                 <li><a class="<?= $page == 'posts.php' ? 'active' : '' ?>" href="<?= url_for('/public/posts.php') ?>">Recent
                         Posts</a></li>
                 <li><a href="<?= url_for('/public/index.php') ?>">
-                        <img src="<?= url_for('images/logo-light.120.png') ?>" alt="search mlms logo"/></a>
+                        <img src="<?= url_for('images/logo-light.120.png') ?>" alt="search mlms logo" id="home-logo"/></a>
                 </li>
                 <li><a href="https://consumer.ftc.gov/articles/multi-level-marketing-businesses-pyramid-schemes"
-                       target="_blank">FTC Article <img src="<?= url_for('images/external-link.png') ?>"
-                                                        alt="external link icon" id="external-link-img" height="20"
-                                                        width="20"/></a>
+                       target="_blank">FTC Article <i class="fa-solid fa-arrow-up-right-from-square fa-xs"></i></a>
                 </li>
                 <li>
                     <?php
