@@ -36,30 +36,8 @@ $mlms = Mlm::find_all();
 
     </div>
 
-    <script>
-        // Get the button:
-        // let scrollup = document.getElementById("scroll-up");
-        //
-        // // When the user scrolls down 20px from the top of the document, show the button
-        // window.onscroll = function () {
-        //     scrollFunction()
-        // };
-        //
-        // function scrollFunction() {
-        //     if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        //         scrollup.style.display = "block";
-        //     } else {
-        //         scrollup.style.display = "none";
-        //     }
-        // }
-
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-            document.body.scrollTop = 0; // For Safari
-            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-        }
-    </script>
-    <button onclick="topFunction()" id="scroll-up" title="Go to top">Top</button>
+    <button onclick="topFunction()" id="scroll-up" title="Go to top"><i class="fa-solid fa-arrow-up fa-xl"></i></button>
+    <script src="<?= url_for('public/js/main.js')?>"></script>
 
 </div>
 

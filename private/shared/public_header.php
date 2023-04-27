@@ -48,8 +48,8 @@ if ($session->user_level == 'a') {
                         MLMs</a></li>
                 <li><a class="<?= $page == 'posts.php' ? 'active' : '' ?>" href="<?= url_for('/public/posts.php') ?>">Recent
                         Posts</a></li>
-                <li><a href="<?= url_for('/public/index.php') ?>">
-                        <img src="<?= url_for('images/logo-light.120.png') ?>" alt="search mlms logo" id="home-logo"/></a>
+                <li><a href="<?= url_for('/public/index.php') ?>"  id="home-logo">
+                        <img src="<?= url_for('images/logo-light.120.png') ?>" alt="search mlms logo"/></a>
                 </li>
                 <li><a href="https://consumer.ftc.gov/articles/multi-level-marketing-businesses-pyramid-schemes"
                        target="_blank">FTC Article <i class="fa-solid fa-arrow-up-right-from-square fa-xs"></i></a>

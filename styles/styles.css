@@ -53,10 +53,6 @@ body {
     pointer-events: none;
 }
 
-#home-logo {
-    border: 1px solid red;
-}
-
 header {
     letter-spacing: 0.06em;
 }
@@ -402,13 +398,14 @@ input {
     bottom: 20px; /* Place the button at the bottom of the page */
     color: #fff; /* Text color */
     cursor: pointer; /* Add a mouse pointer on hover */
-    /*display: none; !* Hidden by default *!*/
+    opacity: 0;
     font-size: 18px; /* Increase font size */
     outline: none; /* Remove outline */
     padding: 15px; /* Some padding */
     position: fixed; /* Fixed/sticky position */
     right: 30px; /* Place the button 30px from the right */
     z-index: 99; /* Make sure it does not overlap */
+    transition: opacity ease-in-out 200ms;
 }
 
 #scroll-up:hover {
