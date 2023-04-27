@@ -1,17 +1,23 @@
 # Search MLMs
-This is a hot and spicy school project for helping people look up multi-level marketing companies.
+This is a hot and spicy school project for helping people search for multi-level marketing companies.
 
 ## Pages for Public
 - index.php
-- posts.php
 - mlms.php
 - login.php
 - signup.php
+- logout.php
 
 ## Pages for Logged in Users
-- newmlm.php
-- /posts/new.php
+- posts.php
+- /comments/new.php
+- forum.php
 
 ## Pages for Admins
-- /admin/posts/edit.php
-- /admin/posts/delete.php
+- /admins/index.php
+- /admins/delete_users.php
+- /admins/posts_edit.php
+- /admins/posts_delete.php
+- /admins/mlms_new.php
+- /admins/mlms_edit.php
+- /admins/mlms_delete.php
