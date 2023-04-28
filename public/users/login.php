@@ -46,7 +46,6 @@ if (is_post_request()) {
         <?php } ?>
 
         <h1>Log in</h1>
-
         <?php echo display_errors($errors); ?>
 
         <form action="login.php" name="login" method="post">

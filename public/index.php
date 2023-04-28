@@ -49,17 +49,17 @@ include(SHARED_PATH . '/public_header.php');
         <div id="main-content">
             <div>
                 <h2>What is multi-level marketing?</h2>
-                <p>Multi-level marketing (MLM or MLMs) used to take place at home parties or in coffee shops. In recent
+                <p>Multi-level marketing (<abbr title="Multi-level Marketing">MLM</abbr> or MLMs) used to take place at home parties or in coffee shops. In recent
                     years, it's become more
                     common on social media. Direct selling companies use multi-level marketing as a strategy to
-                    encourage members to recruit more members into the company.
+                    encourage members to recruit more members into the company. These new members are known as the recruiter's "downline".
                     Those who join MLMs are often called "distributors", "consultants", or "brand partners".
                     Often times, though, people who work for MLM companies are made to buy products
                     for personal use or run pricey auto shipments, effectively making them customers.
                 </p>
                 <p>
                     It can sometimes be difficult to tell from a company's website if they are an MLM company or not.
-                    Use the search feature above and quickly find out if a company operates as an MLM.
+                    Use the search feature above to quickly find out if a company operates as an MLM.
                     Join in conversations about MLMs, or check out videos about multi-level marketing on YouTube.
                 </p>
             </div>
