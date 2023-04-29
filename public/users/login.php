@@ -20,7 +20,7 @@ if (is_post_request()) {
         $errors[] = "Password cannot be blank.";
     }
 
-    // if there were no errors, try to login
+    // if there were no errors, try to log in
     if (empty($errors)) {
         $user = user::find_by_username($user_email);
         // test if user found and password is correct
@@ -46,17 +46,24 @@ if (is_post_request()) {
         <?php } ?>
 
         <h1>Log in</h1>
-        <?php echo display_errors($errors); ?>
+        <?php display_errors($errors); ?>
 
         <form action="login.php" name="login" method="post">
-            Email:<br/>
-            <input type="text" name="user_email" value="<?php echo h($user_email); ?>"/><br/>
-            Password:<br/>
-            <input type="password" name="password" value=""/><br/>
-            <input type="submit" name="submit" id="login-button" value="Log in"/>
+            <div>
+                <label for="user-email">Email:</label>
+                <input id="user-email" type="text" name="user_email" value="<?php echo h($user_email); ?>"/>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input id="password" type="password" name="password" value=""/>
+            </div>
+            <div>
+                <input type="submit" name="submit" id="login-button" value="Log in"/>
+            </div>
         </form>
 
-        <h2>Don't have an account? Click <a href="signup.php" id="signup-link">here</a> to sign up and join conversations about MLMs.
+        <h2>Don't have an account? Click <a href="signup.php" id="signup-link">here</a> to sign up and join
+            conversations about MLMs.
         </h2>
     </div>
 </div>

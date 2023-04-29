@@ -15,7 +15,7 @@ $post = Post::find_by_id($id);
 if (!$post) {
     redirect_to(url_for('/public/admins/index.php'));
 }
-
+$errors = [];
 if (is_post_request()) {
 
     // Save record using post parameters
@@ -27,7 +27,7 @@ if (is_post_request()) {
         $session->message('The post was updated successfully.');
         redirect_to(url_for('/public/admins/posts_edit.php'));
     } else {
-        // show errors
+        $errors = $post->errors;
     }
 }
 
@@ -41,7 +41,7 @@ if (is_post_request()) {
 
     <h1>Edit Post</h1>
 
-<!--    --><?php //echo display_errors($post->errors); ?>
+    <?php display_errors($errors); ?>
 
     <form action="<?php echo url_for('/public/admins/edit_posts.php?id=' . h(u($id))); ?>" method="post" style="display: flex; flex-direction: column;">
         <label for="post_title">Post title:</label>

@@ -96,14 +96,13 @@ class DatabaseObject {
         $attributes = $this->sanitized_attributes();
         $attribute_pairs = [];
         foreach ($attributes as $key => $value) {
-            $attribute_pairs[] = "{$key}='{$value}'";
+            $attribute_pairs[] = "$key='$value'";
         }
         $sql = "UPDATE " . static::$table_name . " SET ";
         $sql .= join(', ', $attribute_pairs);
         $sql .= " WHERE " . static::$table_name . "_id='" . self::$database->escape_string($this->id) . "' ";
         $sql .= "LIMIT 1";
-        $result = self::$database->query($sql);
-        return $result;
+        return self::$database->query($sql);
     }
 
     public function save() {
@@ -147,7 +146,6 @@ class DatabaseObject {
         $sql = "DELETE FROM " . static::$table_name . " ";
         $sql .= "WHERE " . static::$table_name . "_id='" . self::$database->escape_string($this->id) . "' ";
         $sql .= "LIMIT 1";
-        $result = self::$database->query($sql);
-        return $result;
+        return self::$database->query($sql);
     }
 }

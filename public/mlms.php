@@ -27,7 +27,6 @@ $posts = Post::find_all();
     } ?>
 
     <button onclick="topFunction()" id="scroll-up" title="Go to top"><i class="fa-solid fa-arrow-up fa-xl"></i></button>
-    <script src="<?= url_for('public/js/main.js')?>"></script>
 
 </div>
 <?php include(SHARED_PATH . '/public_footer.php'); ?>

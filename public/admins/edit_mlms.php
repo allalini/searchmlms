@@ -15,7 +15,7 @@ $mlm = Mlm::find_by_id($id);
 if (!$mlm) {
     redirect_to(url_for('/public/admins/index.php'));
 }
-
+$errors = [];
 if (is_post_request()) {
 
     // Save record using post parameters
@@ -27,7 +27,7 @@ if (is_post_request()) {
         $session->message('The mlm was updated successfully.');
         redirect_to(url_for('/public/admins/mlms_edit.php'));
     } else {
-        // show errors
+        $errors = $mlm->errors;
     }
 }
 
@@ -41,6 +41,7 @@ if (is_post_request()) {
 
     <h1>Edit MLM</h1>
 
+    <?php display_errors($errors); ?>
     <form action="<?php echo url_for('/public/admins/edit_mlms.php?id=' . h(u($id))); ?>" method="post"
           style="display: flex; flex-direction: column;">
         <label for="mlm_name">MLM Name:</label>

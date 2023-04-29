@@ -1,3 +1,4 @@
+/*noinspection CssUnknownTarget*/
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300&display=swap');
 
 :root {
@@ -102,6 +103,7 @@ nav a:hover {
     text-decoration: none;
 }
 
+/*noinspection CssUnusedSymbol*/
 .active {
     color: var(--light-color);
 }
@@ -151,6 +153,10 @@ nav a:hover {
 #login form,
 #signup form {
     font-size: var(--larger-padding);
+}
+
+#login form label {
+    display: block;
 }
 
 #signup-submit,
@@ -332,14 +338,6 @@ input {
 
 /***** All MLMs *****/
 
-#mlm-list {
-    font-size: 3rem;
-    margin-left: 3rem;
-    /*max-width: 80%;*/
-    -webkit-filter: hue-rotate(60deg);
-    filter: hue-rotate(10deg);
-}
-
 #forum-list {
     font-size: var(--larger-padding);
     list-style-type: none;
@@ -386,26 +384,21 @@ input {
     margin-left: var(--larger-padding);
 }
 
-#mlm-error,
-#error-link {
-    font-size: var(--lg-padding);
-}
-
 #scroll-up {
     background-color: var(--light-color); /* Set a background color */
-    border: 5px solid var(--dark-color); /* Remove borders */
     border-radius: 10px; /* Rounded corners */
+    border: 5px solid var(--dark-color); /* Remove borders */
     bottom: 20px; /* Place the button at the bottom of the page */
     color: #fff; /* Text color */
     cursor: pointer; /* Add a mouse pointer on hover */
-    opacity: 0;
     font-size: 18px; /* Increase font size */
+    opacity: 0;
     outline: none; /* Remove outline */
     padding: 15px; /* Some padding */
     position: fixed; /* Fixed/sticky position */
     right: 30px; /* Place the button 30px from the right */
-    z-index: 99; /* Make sure it does not overlap */
     transition: opacity ease-in-out 200ms;
+    z-index: 99; /* Make sure it does not overlap */
 }
 
 #scroll-up:hover {
@@ -556,6 +549,7 @@ input {
     color: var(--dark-color);
 }
 
+/*noinspection CssUnusedSymbol*/
 #admin-nav a.active {
     color: var(--dark-color);
 }
@@ -577,11 +571,11 @@ input {
 }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
     background-color: #f9f9f9;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    display: none;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    position: absolute;
     z-index: 10;
 }
 
@@ -591,14 +585,12 @@ input {
 
 /***** Admin *****/
 
-#admin-new,
 .content {
     margin-left: var(--larger-padding);
 }
 
 .list th,
 .content td,
-#create-h1,
 .user-edit {
     padding-left: var(--lg-padding);
 }
@@ -619,7 +611,7 @@ input {
     background-color: var(--light-color);
     cursor: pointer;
     display: inline-block;
-    margin:1rem 0;
+    margin: 1rem 0;
 }
 
 .admin-tables {
@@ -694,6 +686,31 @@ footer p {
     align-self: center;
 }
 
+#session-message {
+    background-color: var(--light-color);
+    border-radius: 10px;
+    border: 3px solid var(--dark-color);
+    bottom: 20px;
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: var(--lg-padding);
+    position: fixed;
+    right: 30px;
+    transition: opacity ease-in-out 200ms;
+    z-index: 98;
+}
+
+#session-message i {
+    margin-left: var(--lg-padding);
+    padding: var(--sm-padding);
+    transform-origin: center;
+    transition: all 1s;
+}
+
+#session-message i:hover {
+    transform: rotate(calc(360deg * 1));
+}
+
 /***** Media Queries *****/
 
 /***** 1892 *****/
@@ -754,11 +771,11 @@ footer p {
     }
 
     #main-content {
+        column-gap: 16rem;
         display: flex;
         flex-direction: column;
-        margin: var(--lg-padding);
         justify-content: center;
-        column-gap: 16rem;
+        margin: var(--lg-padding);
         width: 90%;
     }
 

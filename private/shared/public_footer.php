@@ -1,6 +1,8 @@
 <?php
 /** @var $database */
 db_disconnect($database);
+display_session_message();
+
 ?>
 <footer>
     <img src="<?= url_for('images/logo-dark.120.png') ?>" alt="search mlms logo" class="footer-img">
@@ -14,8 +16,6 @@ db_disconnect($database);
 
     <p>Copyright &copy; 2023 Search MLMs</p>
 </footer>
-
-
+<script src="<?= url_for('public/js/main.js')?>"></script>
 </body>
-
 </html>

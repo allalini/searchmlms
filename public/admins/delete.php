@@ -16,7 +16,7 @@ if (!isset($_GET['id'])) {
 
 $id = $_GET['id'];
 $user = User::find_by_id($id);
-if ($user == false) {
+if (!$user) {
     redirect_to(url_for('/admins/index.php'));
 }
 
@@ -27,8 +27,6 @@ if (is_post_request()) {
     $_SESSION['message'] = 'The user was deleted successfully.';
     redirect_to(url_for('/public/admins/delete_users.php'));
 
-} else {
-    // Display form
 }
 
 ?>

@@ -15,7 +15,7 @@ if (!isset($_GET['id'])) {
 
 $id = $_GET['id'];
 $post = Post::find_by_id($id);
-if ($post == false) {
+if (!$post) {
     redirect_to(url_for('/admins/index.php'));
 }
 
@@ -26,8 +26,6 @@ if (is_post_request()) {
     $_SESSION['message'] = 'The post was deleted successfully.';
     redirect_to(url_for('/public/admins/posts_delete.php'));
 
-} else {
-    // Display form
 }
 
 ?>

@@ -10,7 +10,6 @@ $id = $_GET['mlm_id'] ?? '1';
 $mlm = Mlm::find_by_id($id);
 $posts = Post::find_by_mlm_id($id);
 ?>
-
 <h1 id="mlm-forum-h1"><?php echo h($mlm->mlm_name); ?> Forum</h1>
 <div id="new-form">
     <span onclick="showTextField()">New Post</span>

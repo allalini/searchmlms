@@ -32,7 +32,7 @@ class User extends DatabaseObject {
     }
 
     /**
-     * Hashes password so it can be safely stored in the db
+     * Hashes password, so it can be safely stored in the db
      *
      */
     protected function set_hashed_password() {
@@ -90,15 +90,14 @@ class User extends DatabaseObject {
         $attribute_pairs = [];
         foreach ($attributes as $key => $value) {
             if ($key != 'user_password') {
-                $attribute_pairs[] = "{$key}='{$value}'";
+                $attribute_pairs[] = "$key='$value'";
             }
         }
         $sql = "UPDATE " . static::$table_name . " SET ";
         $sql .= join(', ', $attribute_pairs);
         $sql .= " WHERE " . static::$table_name . "_id='" . self::$database->escape_string($this->id) . "' ";
         $sql .= "LIMIT 1";
-        $result = self::$database->query($sql);
-        return $result;
+        return self::$database->query($sql);
     }
 
     public function validate() {
@@ -210,8 +209,7 @@ class User extends DatabaseObject {
         $sql .= "WHERE " . static::$table_name . "_id='" . self::$database->escape_string($this->id) . "' ";
         $sql .= "LIMIT 1";
         echo $sql;
-        $result = self::$database->query($sql);
-        return $result;
+        return self::$database->query($sql);
     }
 
 }

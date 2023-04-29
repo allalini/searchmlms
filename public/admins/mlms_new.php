@@ -2,20 +2,19 @@
 require_once('../../private/initialize.php');
 include(SHARED_PATH . '/public_header.php');
 
-$errors = [];
 
 if (is_post_request()) {
     $mlm = new Mlm($_POST);
+    $errors = $mlm->errors;
     if (empty($errors)) {
         $result = $mlm->save();
 
         if ($result === true) {
-            $new_id = $mlm->id;
             /** @var $session */
             $session->message('The MLM was created successfully.');
             redirect_to(url_for('/public/admins/mlms_edit.php'));
         } else {
-            // show errors
+            $errors = $mlm->errors;
         }
     }
 }
@@ -25,7 +24,7 @@ if (is_post_request()) {
         <?php $page_title = 'Add MLM'; ?>
         <h1>Add an MLM</h1>
 
-        <?php echo display_errors($errors); ?>
+        <?php display_errors($errors); ?>
         <form action="mlms_new.php" method="post" id="admin-pages">
             <label for="mlm_name">MLM Name:</label><br/>
             <input type="text" required name="mlm_name" id="mlm_name"
@@ -42,4 +41,4 @@ if (is_post_request()) {
         </form>
     </div>
 
-<?php include(SHARED_PATH . '/public_footer.php'); ?>
+<?php include(SHARED_PATH . '/admin_footer.php'); ?>

@@ -15,7 +15,7 @@ if (!isset($_GET['id'])) {
 
 $id = $_GET['id'];
 $mlm = Mlm::find_by_id($id);
-if ($mlm == false) {
+if (!$mlm) {
     redirect_to(url_for('/admins/index.php'));
 }
 
@@ -26,8 +26,6 @@ if (is_post_request()) {
     $_SESSION['message'] = 'The mlm was deleted successfully.';
     redirect_to(url_for('/public/admins/mlms_delete.php'));
 
-} else {
-    // Display form
 }
 
 ?>

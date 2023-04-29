@@ -27,8 +27,15 @@ $page = end($page);
 </head>
 
 <body>
+<?php if ($page == 'index.php') { ?>
 <a href="#mlm-search" id="skip-link">Skip to search</a>
 <?php
+}else {
+    ?>
+    <a href="#main-content" id="skip-link">Skip to main content</a>
+    <?php
+}
+
 /** @var $session */
 if ($session->user_level == 'a') {
     require(SHARED_PATH . '/admin_header.php');
@@ -56,7 +63,7 @@ if ($session->user_level == 'a') {
                 </li>
                 <li>
                     <?php
-                    /** @var Session $session */
+                    /** @var $session */
                     if ($session->user_first_name) { ?>
                     <a class="<?= $page == 'logout.php' ? 'active' : '' ?>"
                        href="<?= url_for('/public/users/logout.php') ?>" id="login-link">

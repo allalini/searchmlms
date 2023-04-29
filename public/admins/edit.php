@@ -15,19 +15,18 @@ $user = User::find_by_id($id);
 if (!$user) {
     redirect_to(url_for('/public/admins/index.php'));
 }
-
+$errors = [];
 if (is_post_request()) {
 
     // Save record using post parameters
     $user->merge_attributes($_POST);
     $result = $user->adminUpdate();
-
     if ($result === true) {
         /** @var $session */
         $session->message('The user was updated successfully.');
         redirect_to(url_for('/public/admins/index.php'));
     } else {
-        // show errors
+        $errors = $user->errors;
     }
 }
 
@@ -41,7 +40,7 @@ if (is_post_request()) {
 
     <h1>Edit User</h1>
 
-    <?php echo display_errors($user->errors); ?>
+    <?php display_errors($user->errors); ?>
 
     <form action="<?php echo url_for('/public/admins/edit.php?id=' . h(u($id))); ?>" method="post" style="display: flex; flex-direction: column;">
 

@@ -1,6 +1,6 @@
 <?php
 
-function db_connect() {
+function db_connect(): mysqli {
   $connection = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
   confirm_db_connect($connection);
   return $connection;
@@ -21,4 +21,3 @@ function db_disconnect($connection) {
   }
 }
 
-?>

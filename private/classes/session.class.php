@@ -76,8 +76,4 @@ class Session {
             return $_SESSION['message'] ?? '';
         }
     }
-
-    public function clear_message() {
-        unset($_SESSION['message']);
-    }
 }

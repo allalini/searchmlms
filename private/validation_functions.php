@@ -1,6 +1,6 @@
 <?php
 
-  // is_blank('abcd')
+  // is_blank('string')
   // * validate data presence
   // * uses trim() so empty spaces don't count
   // * uses === to avoid false positives
@@ -9,15 +9,7 @@
     return !isset($value) || trim($value) === '';
   }
 
-  // has_presence('abcd')
-  // * validate data presence
-  // * reverse of is_blank()
-  // * I prefer validation names with "has_"
-  function has_presence($value) {
-    return !is_blank($value);
-  }
-
-  // has_length_greater_than('abcd', 3)
+  // has_length_greater_than('string', 3)
   // * validate string length
   // * spaces count towards length
   // * use trim() if spaces should not count
@@ -26,7 +18,7 @@
     return $length > $min;
   }
 
-  // has_length_less_than('abcd', 5)
+  // has_length_less_than('string', 5)
   // * validate string length
   // * spaces count towards length
   // * use trim() if spaces should not count
@@ -35,7 +27,7 @@
     return $length < $max;
   }
 
-  // has_length_exactly('abcd', 4)
+  // has_length_exactly('string', 4)
   // * validate string length
   // * spaces count towards length
   // * use trim() if spaces should not count
@@ -44,7 +36,7 @@
     return $length == $exact;
   }
 
-  // has_length('abcd', ['min' => 3, 'max' => 5])
+  // has_length('string', ['min' => 3, 'max' => 5])
   // * validate string length
   // * combines functions_greater_than, _less_than, _exactly
   // * spaces count towards length
@@ -61,27 +53,6 @@
     }
   }
 
-  // has_inclusion_of( 5, [1,3,5,7,9] )
-  // * validate inclusion in a set
-  function has_inclusion_of($value, $set) {
-  	return in_array($value, $set);
-  }
-
-  // has_exclusion_of( 5, [1,3,5,7,9] )
-  // * validate exclusion from a set
-  function has_exclusion_of($value, $set) {
-    return !in_array($value, $set);
-  }
-
-  // has_string('nobody@nowhere.com', '.com')
-  // * validate inclusion of character(s)
-  // * strpos returns string start position or false
-  // * uses !== to prevent position 0 from being considered false
-  // * strpos is faster than preg_match()
-  function has_string($value, $required_string) {
-    return strpos($value, $required_string) !== false;
-  }
-
   // has_valid_email_format('nobody@nowhere.com')
   // * validate correct format for email addresses
   // * format: [chars]@[chars].[2+ letters]
@@ -91,19 +62,4 @@
   function has_valid_email_format($value) {
     $email_regex = '/\A[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\Z/i';
     return preg_match($email_regex, $value) === 1;
-  }
-
-  // has_unique_username('johnqpublic')
-  // * Validates uniqueness of admins.username
-  // * For new records, provide only the username.
-  // * For existing records, provide current ID as second argument
-  //   has_unique_username('johnqpublic', 4)
-  function has_unique_username($user_email, $current_id="0") {
-      $user = User::find_by_username($user_email);
-    if($user === false || $user->id == $current_id) {
-      // is unique
-      return true;
-    } else {
-      return false;
-    }
   }

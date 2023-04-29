@@ -35,7 +35,6 @@ $mlms = Mlm::find_all();
     </div>
 
     <button onclick="topFunction()" id="scroll-up" title="Go to top"><i class="fa-solid fa-arrow-up fa-xl"></i></button>
-    <script src="<?= url_for('public/js/main.js')?>"></script>
 
 </div>
 

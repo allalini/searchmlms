@@ -12,7 +12,7 @@ function display_errors($errors=array()) {
     $output .= "</ul>";
     $output .= "</div>";
   }
-  return $output;
+  echo $output;
 }
 
 function get_and_clear_session_message() {
@@ -26,7 +26,10 @@ function get_and_clear_session_message() {
 function display_session_message() {
   $msg = get_and_clear_session_message();
   if(isset($msg) && $msg != '') {
-    return '<div id="message">' . h($msg) . '</div>';
+    echo '<div id="session-message">' . h($msg) . '
+<i class="fa fa-xmark" onclick="hideMessage()" role="button" title="Close notification"></i>
+</div>';
   }
 }
+
 
