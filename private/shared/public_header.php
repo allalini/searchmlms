@@ -60,7 +60,7 @@ if ($session->user_level == 'a') {
                     if ($session->user_first_name) { ?>
                     <a class="<?= $page == 'logout.php' ? 'active' : '' ?>"
                        href="<?= url_for('/public/users/logout.php') ?>" id="login-link">
-                        Logout <?= $session->user_first_name ?></a><?php
+                        Logout <?= h($session->user_first_name) ?></a><?php
                     }
                     else { ?>
                     <a class="<?= $page == 'login.php' ? 'active' : '' ?>"

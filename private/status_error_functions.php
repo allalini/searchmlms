@@ -30,4 +30,3 @@ function display_session_message() {
   }
 }
 
-?>

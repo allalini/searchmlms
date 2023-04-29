@@ -22,7 +22,7 @@ if (is_post_request()) {
 }
 ?>
 
-<h1 id="reply-heading">Replying in thread: <?php echo $post->post_title ?></h1>
+<h1 id="reply-heading">Replying in thread: <?php echo h($post->post_title) ?></h1>
 <form method="post" action="<?= url_for('public/comments/new.php') ?>" id="comment-form">
     <input type="hidden" name="post_id" value="<?= $post_id ?>"/>
     <input type="hidden" name="parent_comment_id" value="<?= $parent_comment_id ?>"/>

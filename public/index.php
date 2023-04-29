@@ -10,8 +10,9 @@ include(SHARED_PATH . '/public_header.php');
     <main id="main">
         <header class="search-bar">
             <div class="hero-fg">
-                <form action="index.php" method="POST">
-                    <h1 id="main-h1">Is&nbsp;<input aria-label="organization name" type="search" name="mlm_search" id="mlm-search">&nbsp;an&nbsp;MLM?</h1>
+                <form action="index.php" method="POST" id="search-form">
+                    <h1 id="main-h1">Is&nbsp;<input aria-label="organization name" type="search" name="mlm_search"
+                                                    id="mlm-search" required>&nbsp;an&nbsp;MLM?</h1>
                 </form>
 
                 <div class="search-results">
@@ -31,7 +32,7 @@ include(SHARED_PATH . '/public_header.php');
                                 <p>Nope, <?= $mlm->mlm_name ?> isn't an MLM.</p><?php
                             }
                         } else {
-                            echo "Sorry, we're not sure what '" . $mlm_search . "' is.";
+                            echo "Sorry, we're not sure what '" . h($mlm_search) . "' is.";
                         }
                     } ?>
                 </div>
@@ -49,10 +50,12 @@ include(SHARED_PATH . '/public_header.php');
         <div id="main-content">
             <div>
                 <h2>What is multi-level marketing?</h2>
-                <p>Multi-level marketing (<abbr title="Multi-level Marketing">MLM</abbr> or MLMs) used to take place at home parties or in coffee shops. In recent
+                <p>Multi-level marketing (<abbr title="Multi-level Marketing">MLM</abbr> or MLMs) used to take place at
+                    home parties or in coffee shops. In recent
                     years, it's become more
                     common on social media. Direct selling companies use multi-level marketing as a strategy to
-                    encourage members to recruit more members into the company. These new members are known as the recruiter's "downline".
+                    encourage members to recruit more members into the company. These new members are known as the
+                    recruiter's "downline".
                     Those who join MLMs are often called "distributors", "consultants", or "brand partners".
                     Often times, though, people who work for MLM companies are made to buy products
                     for personal use or run pricey auto shipments, effectively making them customers.

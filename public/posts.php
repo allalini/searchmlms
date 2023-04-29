@@ -18,8 +18,8 @@ $posts = Post::find_recent();
             <a href="<?= url_for('/public/forum.php?mlm_id=' . $post->mlm_id) ?>" class="mlm-link">
                 <?= $post->mlm_name ?>
             </a>
-            <h1 class="recent-titles"><?= $post->post_title ?></h1>
-            <p class="recent-post"><?= $post->post ?></p>
+            <h1 class="recent-titles"><?php echo h($post->post_title) ?></h1>
+            <p class="recent-post"><?php echo h($post->post) ?></p>
             <a href="<?= url_for('public/posts/show.php?post_id=' . $post->post_id) ?>" class="view-comments">
                 View with comments
             </a>

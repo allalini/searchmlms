@@ -13,11 +13,6 @@ $posts = Post::find_by_mlm_id($id);
 
 <h1 id="mlm-forum-h1"><?php echo h($mlm->mlm_name); ?> Forum</h1>
 <div id="new-form">
-    <script>
-        function showTextField() {
-            document.getElementById('new-post-form').style.display = 'block';
-        }
-    </script>
     <span onclick="showTextField()">New Post</span>
     <form id="new-post-form" method="post" action="<?= url_for('public/posts/new.php') ?>" style="display: none;">
         <input type="hidden" name="mlm_id" value="<?= $id ?>"/>
@@ -36,11 +31,12 @@ $posts = Post::find_by_mlm_id($id);
     foreach ($posts as $post) { ?>
         <article>
             <h1>
-                <a href="<?= url_for('public/posts/show.php?post_id=' . $post->post_id) ?>"><?php echo $post->post_title ?></a>
+                <a href="<?= url_for('public/posts/show.php?post_id=' . $post->post_id) ?>"><?php echo h($post->post_title) ?></a>
             </h1>
-            <span>By <?= $post->user_first_name ?> <?= $post->user_last_name ?></span>
+            <span>By <?= h($post->user_first_name) ?> <?= h($post->user_last_name) ?></span>
         </article>
     <?php }} ?>
 </div>
+<script src="<?= url_for('public/js/forum.js')?>"></script>
 
 <?php include(SHARED_PATH . '/public_footer.php'); ?>
