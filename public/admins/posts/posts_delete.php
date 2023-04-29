@@ -1,20 +1,20 @@
-<?php require_once('../../private/initialize.php');
+<?php require_once('../../../private/initialize.php');
 // check that the current user has admin user_level, otherwise redirect
 /** @var $session */
 if ($session->user_level != 'a') {
     redirect_to(url_for('/public/index.php'));
 }
 
-// Find all users
+// Find all posts
 $posts = Post::find_all();
-
+$users = User::find_all();
 ?>
 <?php $page_title = 'Posts'; ?>
 <?php require(SHARED_PATH . '/public_header.php'); ?>
 
 <div>
     <div class="content">
-        <h1>Edit Posts</h1>
+        <h1>Delete Posts</h1>
 
         <table class="list">
             <tr>
@@ -30,7 +30,7 @@ $posts = Post::find_all();
                     <td><?php echo h($post->user_id); ?></td>
                     <td><?php echo h($post->post_date); ?></td>
                     <td><?php echo h($post->post_title); ?></td>
-                    <td><a class="action" href="<?php echo url_for('/public/admins/edit_posts.php?id=' . h(u($post->id))); ?>">Edit</a></td>
+                    <td><a class="action" href="<?php echo url_for('/public/admins/posts/delete.php?id=' . h(u($post->id))); ?>">Delete</a></td>
                 </tr>
             <?php } ?>
         </table>

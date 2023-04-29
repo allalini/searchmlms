@@ -1,6 +1,6 @@
 <?php
 
-require_once('../../private/initialize.php');
+require_once('../../../private/initialize.php');
 // check that the current user has admin user_level, otherwise redirect
 /** @var $session */
 if ($session->user_level != 'a') {
@@ -8,12 +8,12 @@ if ($session->user_level != 'a') {
 }
 
 if (!isset($_GET['id'])) {
-    redirect_to(url_for('/public/admins/index.php'));
+    redirect_to(url_for('/public/admins/users/index.php'));
 }
 $id = $_GET['id'];
 $user = User::find_by_id($id);
 if (!$user) {
-    redirect_to(url_for('/public/admins/index.php'));
+    redirect_to(url_for('/public/admins/users/index.php'));
 }
 $errors = [];
 if (is_post_request()) {
@@ -24,7 +24,7 @@ if (is_post_request()) {
     if ($result === true) {
         /** @var $session */
         $session->message('The user was updated successfully.');
-        redirect_to(url_for('/public/admins/index.php'));
+        redirect_to(url_for('/public/admins/users/index.php'));
     } else {
         $errors = $user->errors;
     }
@@ -36,13 +36,13 @@ if (is_post_request()) {
 <?php include(SHARED_PATH . '/public_header.php'); ?><br>
 
 <div class="user-edit">
-    <a class="back-link" href="<?php echo url_for('/public/admins/index.php'); ?>">&laquo; Back to List</a>
+    <a class="back-link" href="<?php echo url_for('/public/admins/users/index.php'); ?>">&laquo; Back to List</a>
 
     <h1>Edit User</h1>
 
     <?php display_errors($user->errors); ?>
 
-    <form action="<?php echo url_for('/public/admins/edit.php?id=' . h(u($id))); ?>" method="post" style="display: flex; flex-direction: column;">
+    <form action="<?php echo url_for('/public/admins/users/edit.php?id=' . h(u($id))); ?>" method="post" style="display: flex; flex-direction: column;">
 
         <label for="user-level">User level:</label>
         <select id="user-level" name="user_level">

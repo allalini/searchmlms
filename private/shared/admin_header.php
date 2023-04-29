@@ -12,9 +12,9 @@ $page = end($page);
             <button class="dropbtn" onclick="showUserDropdown()">Users</button>
             <ul class="dropdown-content" id="userDropdown">
                 <li><a class="<?= $page == 'index.php' ? 'active' : '' ?>"
-                       href="<?php echo url_for('/public/admins/index.php'); ?>">Edit Users</a></li>
+                       href="<?php echo url_for('/public/admins/users/index.php'); ?>">Edit Users</a></li>
                 <li><a class="<?= $page == 'delete_users.php' ? 'active' : '' ?>"
-                       href="<?php echo url_for('/public/admins/delete_users.php'); ?>">Delete Users</a></li>
+                       href="<?php echo url_for('/public/admins/users/delete_users.php'); ?>">Delete Users</a></li>
             </ul>
         </div>
 
@@ -22,21 +22,21 @@ $page = end($page);
             <button class="dropbtn" onclick="showPostDropdown()">Posts</button>
             <ul class="dropdown-content" id="postDropdown">
                 <li><a class="<?= $page == 'index.php' ? 'active' : '' ?>"
-                       href="<?php echo url_for('/public/admins/posts_edit.php'); ?>">Edit Posts</a></li>
+                       href="<?php echo url_for('/public/admins/posts/index.php'); ?>">Edit Posts</a></li>
                 <li><a class="<?= $page == 'posts_delete.php' ? 'active' : '' ?>"
-                       href="<?php echo url_for('/public/admins/posts_delete.php'); ?>">Delete Posts</a></li>
+                       href="<?php echo url_for('/public/admins/posts/posts_delete.php'); ?>">Delete Posts</a></li>
             </ul>
         </div>
 
         <div class="mlm-dropdown">
             <button class="dropbtn" onclick="showMlmDropdown()">MLMs</button>
             <ul class="dropdown-content" id="mlmDropdown">
-                <li><a class="<?= $page == 'mlms_new.php' ? 'active' : '' ?>"
-                       href="<?php echo url_for('/public/admins/mlms_new.php'); ?>">Add MLMs</a></li>
-                <li><a class="<?= $page == 'mlms_edit.php' ? 'active' : '' ?>"
-                       href="<?php echo url_for('/public/admins/mlms_edit.php'); ?>">Edit MLMs</a></li>
+                <li><a class="<?= $page == 'new.php' ? 'active' : '' ?>"
+                       href="<?php echo url_for('/public/admins/mlms/new.php'); ?>">Add MLMs</a></li>
+                <li><a class="<?= $page == 'index.php' ? 'active' : '' ?>"
+                       href="<?php echo url_for('/public/admins/mlms/index.php'); ?>">Edit MLMs</a></li>
                 <li><a class="<?= $page == 'mlms_delete.php' ? 'active' : '' ?>"
-                       href="<?php echo url_for('/public/admins/mlms_delete.php'); ?>">Delete MLMs</a></li>
+                       href="<?php echo url_for('/public/admins/mlms/mlms_delete.php'); ?>">Delete MLMs</a></li>
             </ul>
         </div>
 

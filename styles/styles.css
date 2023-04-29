@@ -327,6 +327,7 @@ input {
 
 #main-content p {
     font-size: 1.5rem;
+    line-height: 1.5;
 }
 
 #boss {
@@ -697,12 +698,13 @@ footer p {
     position: fixed;
     right: 30px;
     transition: opacity ease-in-out 200ms;
-    z-index: 98;
+    z-index: 100;
 }
 
 #session-message i {
     margin-left: var(--lg-padding);
     padding: var(--sm-padding);
+    cursor: pointer;
     transform-origin: center;
     transition: all 1s;
 }

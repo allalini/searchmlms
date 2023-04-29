@@ -1,8 +1,8 @@
 <?php
-require_once('../../private/initialize.php');
+require_once('../../../private/initialize.php');
 include(SHARED_PATH . '/public_header.php');
 
-
+$errors = [];
 if (is_post_request()) {
     $mlm = new Mlm($_POST);
     $errors = $mlm->errors;
@@ -12,7 +12,7 @@ if (is_post_request()) {
         if ($result === true) {
             /** @var $session */
             $session->message('The MLM was created successfully.');
-            redirect_to(url_for('/public/admins/mlms_edit.php'));
+            redirect_to(url_for('/public/admins/mlms/index.php'));
         } else {
             $errors = $mlm->errors;
         }
@@ -25,7 +25,7 @@ if (is_post_request()) {
         <h1>Add an MLM</h1>
 
         <?php display_errors($errors); ?>
-        <form action="mlms_new.php" method="post" id="admin-pages">
+        <form action="new.php" method="post" id="admin-pages">
             <label for="mlm_name">MLM Name:</label><br/>
             <input type="text" required name="mlm_name" id="mlm_name"
                    value="<?= $_POST['mlm_name'] ?? '' ?>"><br/>

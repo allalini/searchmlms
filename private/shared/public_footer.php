@@ -5,7 +5,7 @@ display_session_message();
 
 ?>
 <footer>
-    <img src="<?= url_for('images/logo-dark.120.png') ?>" alt="search mlms logo" class="footer-img">
+    <a class="footer-img" href="<?=url_for("/index.php")?>"><img src="<?= url_for('images/logo-dark.120.png') ?>" alt="search mlms logo" ></a>
     <ul>
         <li>Links</li>
 <!--        <li><a href="#">Account settings</a></li>-->

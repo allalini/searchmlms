@@ -1,4 +1,4 @@
-<?php require_once('../../private/initialize.php');
+<?php require_once('../../../private/initialize.php');
 // check that the current user has admin user_level, otherwise redirect
 /** @var $session */
 if ($session->user_level != 'a') {
@@ -14,7 +14,7 @@ $users = User::find_all();
 
 <div>
     <div class="content">
-        <h1>Edit Users</h1>
+        <h1>Delete Users</h1>
 
         <table class="list">
             <tr>
@@ -32,8 +32,7 @@ $users = User::find_all();
                     <td><?php echo h($user->user_first_name); ?></td>
                     <td><?php echo h($user->user_last_name); ?></td>
                     <td><?php echo h($user->user_email); ?></td>
-<!--                    <td><a class="action" href="--><?php //echo url_for('/public/admins/show.php?id=' . h(u($user->id))); ?><!--">View</a></td>-->
-                    <td><a class="action" href="<?php echo url_for('/public/admins/edit.php?id=' . h(u($user->id))); ?>">Edit</a></td>
+                    <td><a class="action" href="<?php echo url_for('/public/admins/users/delete.php?id=' . h(u($user->id))); ?>">Delete</a></td>
                 </tr>
             <?php } ?>
         </table>
