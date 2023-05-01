@@ -204,12 +204,4 @@ class User extends DatabaseObject {
         return password_verify($password, $this->user_password);
     }
 
-    public function delete() {
-        $sql = "DELETE FROM " . static::$table_name . " ";
-        $sql .= "WHERE " . static::$table_name . "_id='" . self::$database->escape_string($this->id) . "' ";
-        $sql .= "LIMIT 1";
-        echo $sql;
-        return self::$database->query($sql);
-    }
-
 }

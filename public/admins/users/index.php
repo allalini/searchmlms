@@ -25,15 +25,16 @@ $users = User::find_all();
                 <th>Email</th>
             </tr>
 
-            <?php foreach($users as $user) { ?>
+            <?php foreach ($users as $user) { ?>
                 <tr class="admin-tables">
                     <td><?php echo h($user->id); ?></td>
                     <td><?php echo h($user->user_level); ?></td>
                     <td><?php echo h($user->user_first_name); ?></td>
                     <td><?php echo h($user->user_last_name); ?></td>
                     <td><?php echo h($user->user_email); ?></td>
-<!--                    <td><a class="action" href="--><?php //echo url_for('/public/admins/show.php?id=' . h(u($user->id))); ?><!--">View</a></td>-->
-                    <td><a class="action" href="<?php echo url_for('/public/admins/users/edit.php?id=' . h(u($user->id))); ?>">Edit</a></td>
+                    <td><a class="action"
+                           href="<?php echo url_for('/public/admins/users/edit.php?id=' . h(u($user->id))); ?>">Edit</a>
+                    </td>
                 </tr>
             <?php } ?>
         </table>

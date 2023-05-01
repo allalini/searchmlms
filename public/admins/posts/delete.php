@@ -10,13 +10,13 @@ if ($session->user_level != 'a') {
 
 
 if (!isset($_GET['id'])) {
-    redirect_to(url_for('/admins/index.php'));
+    redirect_to(url_for('/public/index.php'));
 }
 
 $id = $_GET['id'];
 $post = Post::find_by_id($id);
 if (!$post) {
-    redirect_to(url_for('/admins/index.php'));
+    redirect_to(url_for('/public/index.php'));
 }
 
 if (is_post_request()) {

@@ -145,7 +145,7 @@ class DatabaseObject {
     public function delete() {
         $sql = "DELETE FROM " . static::$table_name . " ";
         $sql .= "WHERE " . static::$table_name . "_id='" . self::$database->escape_string($this->id) . "' ";
-        $sql .= "LIMIT 1";
+        $sql .= "LIMIT 1;";
         return self::$database->query($sql);
     }
 }

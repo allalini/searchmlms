@@ -14,7 +14,7 @@ This is a hot and spicy school project for helping people search for multi-level
 - forum.php
 
 ## Pages for Admins
-- /admins/index.php
+- /admins/users/index.php
 - /admins/delete_users.php
 - /admins/posts_edit.php
 - /admins/posts_delete.php

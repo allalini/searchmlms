@@ -566,13 +566,14 @@ input {
     cursor: pointer;
     font-family: inherit;
     font-size: var(--larger-padding);
-    /*margin-left: .5rem;*/
     outline: none;
     padding: 14px 16px;
 }
 
 .dropdown-content {
     background-color: #f9f9f9;
+    border: var(--light-color) solid 3px;
+    border-radius: 10px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     display: none;
     min-width: 160px;
@@ -687,6 +688,8 @@ footer p {
     align-self: center;
 }
 
+/***** Session messages *****/
+
 #session-message {
     background-color: var(--light-color);
     border-radius: 10px;
@@ -711,6 +714,16 @@ footer p {
 
 #session-message i:hover {
     transform: rotate(calc(360deg * 1));
+}
+
+/***** Error 404 *****/
+
+#not-found {
+    border: #145699 solid 5px;
+    border-radius: 10px;
+    margin: 5rem;
+    padding: 3rem;
+    text-align: center;
 }
 
 /***** Media Queries *****/

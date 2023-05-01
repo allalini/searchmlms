@@ -13,6 +13,7 @@ $posts = Post::find_all();
     foreach ($mlms as $mlm) { ?>
         <?php if ($mlm->is_mlm == 1) { ?>
             <div class="forum-links">
+
                 <h3><?= $mlm->mlm_name; ?></h3>
                 <?php
                 $space = ' ';

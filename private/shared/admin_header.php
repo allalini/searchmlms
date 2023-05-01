@@ -32,7 +32,7 @@ $page = end($page);
             <button class="dropbtn" onclick="showMlmDropdown()">MLMs</button>
             <ul class="dropdown-content" id="mlmDropdown">
                 <li><a class="<?= $page == 'new.php' ? 'active' : '' ?>"
-                       href="<?php echo url_for('/public/admins/mlms/new.php'); ?>">Add MLMs</a></li>
+                       href="<?php echo url_for('/public/admins/mlms/new.php'); ?>">Add Company</a></li>
                 <li><a class="<?= $page == 'index.php' ? 'active' : '' ?>"
                        href="<?php echo url_for('/public/admins/mlms/index.php'); ?>">Edit MLMs</a></li>
                 <li><a class="<?= $page == 'mlms_delete.php' ? 'active' : '' ?>"

@@ -11,13 +11,13 @@ if ($session->user_level != 'a') {
 
 
 if (!isset($_GET['id'])) {
-    redirect_to(url_for('/admins/index.php'));
+    redirect_to(url_for('/public/admins/users/delete_users.php'));
 }
 
 $id = $_GET['id'];
 $user = User::find_by_id($id);
 if (!$user) {
-    redirect_to(url_for('/admins/index.php'));
+    redirect_to(url_for('/public/admins/users/delete_users.php'));
 }
 
 if (is_post_request()) {

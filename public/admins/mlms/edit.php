@@ -24,7 +24,7 @@ if (is_post_request()) {
 
     if ($result === true) {
         /** @var $session */
-        $session->message('The MLM was updated successfully.');
+        $session->message('The entry was updated successfully.');
         redirect_to(url_for('/public/admins/mlms/index.php'));
     } else {
         $errors = $mlm->errors;

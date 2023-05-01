@@ -2,7 +2,7 @@
 require_once('../../private/initialize.php');
 include(SHARED_PATH . '/public_header.php');
 
-
+$errors = [];
 if (is_post_request()) {
     $user = new User($_POST);
     $errors = $user->validate();
