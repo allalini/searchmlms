@@ -66,7 +66,7 @@ include(SHARED_PATH . '/public_header.php');
                     Join in conversations about MLMs, or check out videos about multi-level marketing on YouTube.
                 </p>
             </div>
-            <img src="../images/boss.png" width="400" height="400" id="boss" alt="boss babe vibes">
+            <img src="../images/boss.png" width="400" height="400" id="boss" alt="image representing boss babe vibes">
         </div>
     </main>
 <?php include(SHARED_PATH . '/public_footer.php'); ?>

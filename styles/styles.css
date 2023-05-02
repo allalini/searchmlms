@@ -161,7 +161,7 @@ nav a:hover {
 
 #signup-submit,
 #login-button {
-    background-color: var(--light-color);
+    background-color: var(--lighter-color);
     border: var(--light-color);
     border-radius: 10px;
     color: #000;
@@ -356,12 +356,12 @@ input {
 #forum-list h3 {
     font-size: var(--larger-padding);
     font-weight: bold;
-    color: #fff;
+    color: var(--dark-color);
     margin: .5rem 0;
 }
 
 .forum-links {
-    background-color: var(--light-color);
+    background-color: var(--lighter-color);
     border: var(--dark-color) solid 5px;
     border-radius: 10px;
     margin: var(--lg-padding);
@@ -370,14 +370,14 @@ input {
 
 .forum-links a,
 .home-mlm-link {
-    color: #000;
+    color: var(--dark-color);
     font-size: var(--lg-padding);
     transition: all .3s ease-in-out;
 }
 
 .forum-links a:hover,
 .home-mlm-link:hover {
-    color: #fff;
+    color: #000;
     transition: all .3s ease-in-out;
 }
 
@@ -438,7 +438,7 @@ input {
     background-color: var(--light-color);
     border: var(--light-color) solid 1px;
     border-radius: 10px;
-    color: white;
+    color: #fff;
     margin-top: var(--lg-padding);
     padding: .5rem;
 }
@@ -610,14 +610,14 @@ input {
 }
 
 .admin-submit {
-    background-color: var(--light-color);
+    background-color: var(--lighter-color);
     cursor: pointer;
     display: inline-block;
     margin: 1rem 0;
 }
 
 .admin-tables {
-    background-color: var(--light-color);
+    background-color: var(--lighter-color);
 }
 
 .admin-tables td {
