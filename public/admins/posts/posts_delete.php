@@ -30,7 +30,7 @@ $users = User::find_all();
                     <td><?php echo h($post->user_id); ?></td>
                     <td><?php echo h($post->post_date); ?></td>
                     <td><?php echo h($post->post_title); ?></td>
-                    <td><a class="action" href="<?php echo url_for('/public/admins/posts/delete.php?id=' . h(u($post->id))); ?>">Delete</a></td>
+                    <td><a class="action" id="delete-post" href="<?php echo url_for('/public/admins/posts/delete.php?id=' . h(u($post->id))); ?>">Delete</a></td>
                 </tr>
             <?php } ?>
         </table>

@@ -27,7 +27,7 @@ $mlms = Mlm::find_all();
                     <td><?php echo ($mlm->mlm_id); ?></td>
                     <td><?php echo h($mlm->mlm_name); ?></td>
                     <td><?= ($mlm->is_mlm ? 'Yes' : 'No') ?></td>
-                    <td><a class="action" href="<?php echo url_for('/public/admins/mlms/delete.php?id=' . h(u($mlm->id))); ?>">Delete</a></td>
+                    <td><a class="action" id="delete-mlm" href="<?php echo url_for('/public/admins/mlms/delete.php?id=' . h(u($mlm->id))); ?>">Delete</a></td>
                 </tr>
             <?php } ?>
         </table>

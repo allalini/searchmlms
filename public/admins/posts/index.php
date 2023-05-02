@@ -30,7 +30,7 @@ $posts = Post::find_all();
                     <td><?php echo h($post->user_id); ?></td>
                     <td><?php echo h($post->post_date); ?></td>
                     <td><?php echo h($post->post_title); ?></td>
-                    <td><a class="action" href="<?php echo url_for('/public/admins/posts/edit.php?id=' . h(u($post->id))); ?>">Edit</a></td>
+                    <td><a class="action" id="edit-post" href="<?php echo url_for('/public/admins/posts/edit.php?id=' . h(u($post->id))); ?>">Edit</a></td>
                 </tr>
             <?php } ?>
         </table>

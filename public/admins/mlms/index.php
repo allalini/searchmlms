@@ -28,7 +28,7 @@ $mlms = Mlm::find_all();
                     <td><?= ($mlm->mlm_id) ?></td>
                     <td><?= h($mlm->mlm_name) ?></td>
                     <td><?= ($mlm->is_mlm ? 'Yes' : 'No') ?></td>
-                    <td><a class="action" href="<?= url_for('/public/admins/mlms/edit.php?id=' . h(u($mlm->id))) ?>">Edit</a>
+                    <td><a class="action" id="edit-mlm" href="<?= url_for('/public/admins/mlms/edit.php?id=' . h(u($mlm->id))) ?>">Edit</a>
                     </td>
                 </tr>
             <?php } ?>

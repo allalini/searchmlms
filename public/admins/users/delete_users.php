@@ -32,7 +32,7 @@ $users = User::find_all();
                     <td><?php echo h($user->user_first_name); ?></td>
                     <td><?php echo h($user->user_last_name); ?></td>
                     <td><?php echo h($user->user_email); ?></td>
-                    <td><a class="action" href="<?php echo url_for('/public/admins/users/delete.php?id=' . h(u($user->id))); ?>">Delete</a></td>
+                    <td><a class="action" id="delete-user" href="<?php echo url_for('/public/admins/users/delete.php?id=' . h(u($user->id))); ?>">Delete</a></td>
                 </tr>
             <?php } ?>
         </table>

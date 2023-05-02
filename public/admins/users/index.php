@@ -32,7 +32,7 @@ $users = User::find_all();
                     <td><?php echo h($user->user_first_name); ?></td>
                     <td><?php echo h($user->user_last_name); ?></td>
                     <td><?php echo h($user->user_email); ?></td>
-                    <td><a class="action"
+                    <td><a class="action" id="edit-user"
                            href="<?php echo url_for('/public/admins/users/edit.php?id=' . h(u($user->id))); ?>">Edit</a>
                     </td>
                 </tr>
