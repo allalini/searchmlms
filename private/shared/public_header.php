@@ -30,10 +30,6 @@ $page = end($page);
 <?php if ($page == 'index.php') { ?>
     <a href="#mlm-search" id="skip-link">Skip to search</a>
     <?php
-} else {
-    ?>
-    <a href="#main-content" id="skip-link">Skip to main content</a>
-    <?php
 }
 
 /** @var $session */

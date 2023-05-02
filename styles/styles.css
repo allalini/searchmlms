@@ -6,7 +6,8 @@
     --lg-padding: 1rem;
     --larger-padding: 2rem;
     --dark-color: #145699;
-    --light-color: #93bce6;
+    --light-color: #588cbf;
+    --lighter-color: #aacef2;
 }
 
 *,
@@ -99,13 +100,12 @@ nav a {
 }
 
 nav a:hover {
-    color: var(--light-color);
+    color: var(--lighter-color);
     text-decoration: none;
 }
 
-/*noinspection CssUnusedSymbol*/
 .active {
-    color: var(--light-color);
+    color: var(--lighter-color);
 }
 
 /***** Mobile nav *****/
@@ -164,7 +164,7 @@ nav a:hover {
     background-color: var(--light-color);
     border: var(--light-color);
     border-radius: 10px;
-    color: #fff;
+    color: #000;
     cursor: pointer;
     font-weight: bold;
     padding: .5rem
